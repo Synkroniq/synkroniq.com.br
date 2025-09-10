@@ -2,7 +2,7 @@
 
 Página de recepção digital da Synkroniq, empresa especializada em manutenção de computadores e notebooks.
 
-Este site está hospedado via GitHub Pages e acessível em [https://synkoring.com.br](https://synkoring.com.br).
+Este site está hospedado via GitHub Pages e acessível em [https://synkroniq.com.br](https://synkroniq.com.br).
 
 ## Contato
 
