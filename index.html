@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Synkroniq</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      color: #f2f2f2;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      font-size: 3em;
+      color: #00ffe0;
+    }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      background-color: #00ffe0;
+      color: #000;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background-color: #00ccaa;
+    }
+    .pix {
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+    .qr {
+      margin-top: 30px;
+    }
+    .copy-btn {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .social-icons {
+      margin-top: 20px;
+    }
+    .social-icons a {
+      margin: 0 10px;
+      font-size: 1.5em;
+      color: #00ffe0;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Synkroniq</h1>
+  <p>Manutenção de computadores e notebooks com excelência e agilidade.</p>
+
+  <a class="btn" href="https://wa.me/+5544997648490" target="_blank">📲 Fale pelo WhatsApp</a>
+
+  <div class="social-icons">
+    <a href="https://instagram.com/synkroniq.tech" target="_blank">📷 Instagram</a>
+    <a href="mailto:contato@synkroniq.com.br">✉️ E-mail</a>
+  </div>
+
+  <div class="pix">
+    <h2>💸 Chave Pix</h2>
+    <p id="pixKey">contato@synkroniq.com.br</p>
+    <button class="copy-btn" onclick="copyPix()">Copiar chave</button>
+  </div>
+
+  <div class="qr">
+    <h3>📎 Escaneie o QR Code</h3>
+    <a href="https://me-qr.com/YOUR_QR_PAGE_LINK" target="_blank">
+      <img src="https://me-qr.com/image/YOUR_QR_IMAGE_LINK" alt="QR Code Synkroniq" width="200">
+    </a>
+  </div>
+
+  <script>
+    function copyPix() {
+      const pix = document.getElementById("pixKey").innerText;
+      navigator.clipboard.writeText(pix);
+      alert("Chave Pix copiada!");
+    }
+  </script>
+</body>
+</html>
