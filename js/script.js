@@ -51,3 +51,5 @@ footerLinks.forEach((link) => {
     }
   });
 });
+
+console.log("JavaScript carregado!");
