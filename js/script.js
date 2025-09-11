@@ -6,13 +6,11 @@ submenuToggles.forEach(toggle => {
   const submenu = toggle.querySelector('.submenu');
 
   button.addEventListener('click', () => {
-    const isVisible = submenu.style.display === 'block';
-
     // Fecha todos os submenus
-    document.querySelectorAll('.submenu').forEach(s => s.style.display = 'none');
+    document.querySelectorAll('.submenu').forEach(s => s.classList.remove('ativo'));
 
-    // Abre ou fecha o submenu clicado
-    submenu.style.display = isVisible ? 'none' : 'block';
+    // Alterna o submenu clicado
+    submenu.classList.toggle('ativo');
   });
 });
 
