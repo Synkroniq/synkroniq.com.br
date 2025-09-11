@@ -1,4 +1,3 @@
-// Submenus: abrir/fechar ao clicar
 const submenuToggles = document.querySelectorAll('.submenu-toggle');
 
 submenuToggles.forEach(toggle => {
@@ -6,13 +5,18 @@ submenuToggles.forEach(toggle => {
   const submenu = toggle.querySelector('.submenu');
 
   button.addEventListener('click', () => {
+    const isOpen = submenu.classList.contains('ativo');
+
     // Fecha todos os submenus
     document.querySelectorAll('.submenu').forEach(s => s.classList.remove('ativo'));
 
-    // Alterna o submenu clicado
-    submenu.classList.toggle('ativo');
+    // Se estava fechado, abre; se já estava aberto, fecha
+    if (!isOpen) {
+      submenu.classList.add('ativo');
+    }
   });
 });
+
 
 // Scroll suave para seções do menu principal
 const menuLinks = document.querySelectorAll(".menu a, .submenu a");
