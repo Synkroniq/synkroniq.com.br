@@ -1,22 +1,18 @@
-console.log("JavaScript carregado!");
-
 // Submenus: abrir/fechar ao clicar
-const submenuToggles = document.querySelectorAll(".submenu-toggle");
+const submenuToggles = document.querySelectorAll('.submenu-toggle');
 
-submenuToggles.forEach((toggle) => {
-  const button = toggle.querySelector(".menu-btn");
-  const submenu = toggle.querySelector(".submenu");
+submenuToggles.forEach(toggle => {
+  const button = toggle.querySelector('.menu-btn');
+  const submenu = toggle.querySelector('.submenu');
 
-  button.addEventListener("click", () => {
-    const isVisible = submenu.style.display === "block";
+  button.addEventListener('click', () => {
+    const isVisible = submenu.style.display === 'block';
 
     // Fecha todos os submenus
-    document
-      .querySelectorAll(".submenu")
-      .forEach((s) => (s.style.display = "none"));
+    document.querySelectorAll('.submenu').forEach(s => s.style.display = 'none');
 
     // Abre ou fecha o submenu clicado
-    submenu.style.display = isVisible ? "none" : "block";
+    submenu.style.display = isVisible ? 'none' : 'block';
   });
 });
 
