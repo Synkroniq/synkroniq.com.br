@@ -77,7 +77,13 @@ body {
   min-width: 180px;
   z-index: 10;
 }
+.submenu {
+  display: none;
+}
 
+.submenu.ativo {
+  display: block;
+}
 .submenu li a {
   color: #fff;
   text-decoration: none;
