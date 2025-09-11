@@ -1,3 +1,5 @@
+console.log("JavaScript carregado!");
+
 // Submenus: abrir/fechar ao clicar
 const submenuToggles = document.querySelectorAll(".submenu-toggle");
 
@@ -52,4 +54,3 @@ footerLinks.forEach((link) => {
   });
 });
 
-console.log("JavaScript carregado!");
