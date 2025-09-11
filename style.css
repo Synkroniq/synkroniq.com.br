@@ -1,0 +1,189 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f5f7fa;
+  color: #000;
+  line-height: 1.6;
+}
+
+/* Cabeçalho */
+.topo {
+  background-color: #0a1f44;
+  color: #f5f7fa;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.topo h1 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 2.5rem;
+}
+
+/* Menu */
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  font-size: 1rem;
+  flex-wrap: wrap;
+}
+
+.menu ul li {
+  position: relative;
+}
+
+.menu ul li a,
+.menu-btn {
+  color: #f5f7fa;
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
+  display: inline-block;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.menu ul li:not(:last-child)::after {
+  content: "|";
+  margin-left: 0.5rem;
+  color: #ccc;
+}
+
+.menu-btn:hover,
+.menu ul li a:hover {
+  background-color: #00c853;
+  border-radius: 4px;
+}
+
+/* Submenu */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 2.5rem;
+  left: 0;
+  background-color: #333;
+  padding: 0.8rem;
+  border-radius: 5px;
+  min-width: 180px;
+  z-index: 10;
+}
+
+.submenu li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.submenu li a:hover {
+  color: #00c853;
+}
+
+/* Apresentação */
+.apresentacao {
+  padding: 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.apresentacao h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #0a1f44;
+}
+
+.apresentacao p {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+}
+
+/* Ícones sociais */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 2rem;
+}
+
+.social-icons a {
+  color: #0a1f44;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #00c853;
+}
+
+/* Seções */
+section {
+  padding: 2rem;
+  border-bottom: 1px solid #ddd;
+}
+
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #0a1f44;
+}
+
+section p,
+section ul {
+  font-size: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Rodapé */
+footer {
+  background-color: #0a1f44;
+  color: #f5f7fa;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  margin-top: 0.5rem;
+}
+
+.footer-links a {
+  color: #f5f7fa;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.footer-links a:hover {
+  color: #00c853;
+}
+
+/* Seções ocultas */
+.info-oculta {
+  display: none;
+  padding: 2rem;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.info-oculta h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #0a1f44;
+}
+
+.info-oculta p {
+  font-size: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
