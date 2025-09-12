@@ -218,11 +218,12 @@ footer {
 }
 
 .botao {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 15px;
   background-color: #0078d4;
   color: white;
+  padding: 10px 15px;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
 }
