@@ -37,11 +37,16 @@ menuLinks.forEach((link) => {
 // Rodapé: mostrar seções ocultas
 const footerLinks = document.querySelectorAll(".footer-links a");
 const infoSections = document.querySelectorAll(".info-oculta");
+const mapa = {
+  "política de privacidade": "politica-privacidade",
+  "termos de uso": "termos-uso",
+  "suporte": "suporte"
 
 footerLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
-    const targetId = link.textContent.toLowerCase().replace(/ /g, "");
+    const texto = link.textContent.toLowerCase().trim();
+    const targetId = mapa[texto];
     infoSections.forEach((sec) => {
       sec.style.display = sec.id === targetId ? "block" : "none";
     });
