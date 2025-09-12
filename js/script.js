@@ -35,25 +35,21 @@ menuLinks.forEach((link) => {
 });
 
 // Rodapé: mostrar seções ocultas
-const footerLinks = document.querySelectorAll(".footer-links a");
-const infoSections = document.querySelectorAll(".info-oculta");
-const mapa = {
-  "política de privacidade": "politica-privacidade",
-  "termos de uso": "termos-uso",
-  "suporte": "suporte"
+document.addEventListener("DOMContentLoaded", () => {
+  const footerLinks = document.querySelectorAll(".footer-links a");
+  const infoSections = document.querySelectorAll(".info-oculta");
 
-footerLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const texto = link.textContent.toLowerCase().trim();
-    const targetId = mapa[texto];
-    infoSections.forEach((sec) => {
-      sec.style.display = sec.id === targetId ? "block" : "none";
+  footerLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault(); // Impede o salto pro topo
+      const targetId = link.dataset.id;
+      infoSections.forEach((sec) => {
+        sec.style.display = sec.id === targetId ? "block" : "none";
+      });
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
     });
-    const target = document.getElementById(targetId);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
   });
 });
-
