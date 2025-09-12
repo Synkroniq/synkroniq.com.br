@@ -228,3 +228,15 @@ footer {
   margin-top: 10px;
   font-weight: bold;
 }
+
+
+/* Aviso */
+.aviso {
+  background-color: #ffeeba;
+  color: #856404;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
