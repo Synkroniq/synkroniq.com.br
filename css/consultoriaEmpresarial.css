@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(to bottom right, #e8f5e9, #ffffff);
+  color: #263238;
+}
+
+.empresarial-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.empresarial-container h1 {
+  font-size: 2.5rem;
+  color: #1b5e20;
+  margin-bottom: 1rem;
+}
+
+.intro {
+  font-size: 1.2rem;
+  color: #424242;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.servico-card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.servico-card:hover {
+  transform: scale(1.03);
+}
+
+.servico-card h3 {
+  font-size: 1.4rem;
+  color: #2e7d32;
+  margin-bottom: 0.5rem;
+}
+
+.servico-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.whatsapp-btn {
+  background-color: #25D366;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background-color: #128C7E;
+  cursor: pointer;
+}
+
+/* 📱 Responsivo para celular */
+@media (max-width: 600px) {
+  .empresarial-container h1 {
+    font-size: 2rem;
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+
+  .servico-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .servico-card p {
+    font-size: 0.95rem;
+  }
+
+  .whatsapp-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
