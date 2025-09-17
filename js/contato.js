@@ -4,3 +4,6 @@ function abrirWhatsApp() {
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
   window.open(url, '_blank');
 }
+function voltarInicio() {
+  window.location.href = "index.html";
+}
