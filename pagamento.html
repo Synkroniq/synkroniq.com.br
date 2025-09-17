@@ -2,12 +2,29 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Indicação de Produtos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forma de Pagamento | Synkroniq</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pagamento.css">
 </head>
 <body>
-  <h1>Indicação de Produtos</h1>
-  <p>Aqui você pode encontrar os produtos recomendados pela Synkroniq...</p>
-  <a href="index.html">← Voltar à página inicial</a>
+  <div class="pagamento-container">
+    <h2>Formas de Pagamento</h2>
+    <p>
+      Na Synkroniq, acreditamos que a confiança começa pela simplicidade. Por isso, oferecemos formas de pagamento diretas e seguras: <strong>Pix ou dinheiro</strong>. Estamos iniciando com foco total na transparência e no atendimento personalizado — e você já faz parte dessa evolução.
+    </p>
+
+    <div class="qr-code">
+      <img src="img/qrcode-pix.png" alt="QR Code Pix" width="200">
+    </div>
+
+    <div class="pix-chave" id="chavePix">88a7f686-2995-4c51-b787-37c06755b569</div>
+    <a href="javascript:void(0)" class="botao-copiar" onclick="copiarPix()">Copiar chave Pix</a>
+
+    <br>
+    <a href="javascript:void(0)" onclick="window.location.href='index.html'" class="voltar">← Voltar à página inicial</a>
+  </div>
+
+  <script src="js/pagamento.js"></script>
 </body>
 </html>
