@@ -4,7 +4,10 @@ body {
   font-family: 'Montserrat', sans-serif;
   background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
   color: #004d40;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
+
 
 .servicos-container {
   max-width: 1200px;
@@ -28,7 +31,7 @@ body {
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr;
   gap: 2rem;
 }
 
@@ -75,12 +78,25 @@ body {
 
 /* 📱 Responsivo para celular */
 @media (max-width: 600px) {
+  .servicos-container {
+    padding: 1rem;
+  }
+
   .servicos-container h1 {
     font-size: 2rem;
   }
 
   .intro {
     font-size: 1rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .servico-card {
+    padding: 1rem;
   }
 
   .servico-card h3 {
