@@ -1,0 +1,67 @@
+body {
+  background-color: #f5f7fa;
+  font-family: "Montserrat", sans-serif;
+  color: #0a1f44;
+  padding: 2rem;
+  text-align: center;
+}
+
+.pagamento-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.pagamento-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.pagamento-container p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.qr-code {
+  margin: 1rem 0;
+}
+
+.pix-chave {
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: #e0f7fa;
+  padding: 0.8rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  user-select: all;
+}
+
+.botao-copiar {
+  background-color: #0078d4;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.botao-copiar:hover {
+  background-color: #00c853;
+}
+
+.voltar {
+  display: inline-block;
+  margin-top: 2rem;
+  color: #0078d4;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.voltar:hover {
+  color: #00c853;
+}
