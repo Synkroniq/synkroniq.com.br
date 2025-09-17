@@ -2,12 +2,79 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Suporte Empresarial</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Serviços Empresariais</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/empresarial.css">
+  <script src="js/empresarial.js" defer></script>
 </head>
 <body>
-  <h1>Suporte Empresarial</h1>
-  <p>Aqui, em breve, você poderá contratar nossos serviços de consultoria e suporte de TI para sua Empresa oferecidos pela Synkroniq...</p>
-  <a href="index.html">← Voltar à página inicial</a>
+  <div class="empresarial-container">
+    <h1>Soluções Empresariais</h1>
+    <p class="intro">
+      A Synkroniq oferece serviços sob medida para empresas que valorizam eficiência, segurança e presença digital.  
+      <em>Tecnologia que trabalha por você.</em>
+    </p>
+
+    <div class="cards-grid">
+      <!-- Criação de Web Sites -->
+      <div class="servico-card">
+        <h3>Criação de Web Sites Profissionais</h3>
+        <p>Sua empresa merece uma presença digital que impressiona. Sites responsivos, rápidos e integrados com redes sociais e WhatsApp.</p>
+        <a href="javascript:void(0)" onclick="abrirWhatsApp('Olá! Tenho interesse na criação de um site profissional para minha empresa.')" class="whatsapp-btn">Solicitar via WhatsApp</a>
+      </div>
+
+      <!-- Manutenção de Infraestrutura de TI -->
+      <div class="servico-card">
+        <h3>Manutenção de Infraestrutura de TI</h3>
+        <p>Suporte técnico, monitoramento de rede e servidores, backup corporativo e segurança de dados. Produtividade garantida.</p>
+        <a href="javascript:void(0)" onclick="abrirWhatsApp('Olá! Gostaria de contratar manutenção de infraestrutura de TI para minha empresa.')" class="whatsapp-btn">Solicitar via WhatsApp</a>
+      </div>
+
+      <!-- Consultoria em Segurança Digital -->
+      <div class="servico-card">
+        <h3>Consultoria em Segurança Digital</h3>
+        <p>Proteja o que sua empresa tem de mais valioso. Auditoria, treinamento e implantação de boas práticas de cibersegurança.</p>
+        <a href="javascript:void(0)" onclick="abrirWhatsApp('Olá! Preciso de consultoria em segurança digital para minha empresa.')" class="whatsapp-btn">Solicitar via WhatsApp</a>
+      </div>
+
+      <!-- Configuração de Redes Corporativas -->
+      <div class="servico-card">
+        <h3>Configuração de Redes Corporativas</h3>
+        <p>Conectividade estável e segura. Instalação de equipamentos, segmentação de rede e Wi-Fi empresarial com controle de acesso.</p>
+        <a href="javascript:void(0)" onclick="abrirWhatsApp('Olá! Quero configurar a rede corporativa da minha empresa.')" class="whatsapp-btn">Solicitar via WhatsApp</a>
+      </div>
+
+      <!-- Backup e Recuperação -->
+      <div class="servico-card">
+        <h3>Backup e Recuperação de Dados</h3>
+        <p>Seus dados sempre protegidos. Backup automatizado e recuperação rápida em caso de falhas. Tranquilidade garantida.</p>
+        <a href="javascript:void(0)" onclick="abrirWhatsApp('Olá! Tenho interesse em soluções de backup e recuperação de dados.')" class="whatsapp-btn">Solicitar via WhatsApp</a>
+      </div>
+
+      <!-- Suporte Técnico Empresarial -->
+      <div class="servico-card">
+        <h3>Suporte Técnico Empresarial</h3>
+        <p>Atendimento por WhatsApp, e-mail ou presencial. Planos mensais ou sob demanda. Sua equipe focada no que importa.</p>
+        <a href="javascript:void(0)" onclick="abrirWhatsApp('Olá! Gostaria de contratar suporte técnico empresarial.')" class="whatsapp-btn">Solicitar via WhatsApp</a>
+      </div>
+
+      <!-- E-mail Corporativo e Domínio Próprio -->
+      <div class="servico-card">
+        <h3>E-mail Corporativo e Domínio Próprio</h3>
+        <p>Seu nome, sua marca, sua autoridade. E-mails personalizados com integração total. Profissionalismo que se destaca.</p>
+        <a href="javascript:void(0)" onclick="abrirWhatsApp('Olá! Quero configurar e-mail corporativo com domínio próprio.')" class="whatsapp-btn">Solicitar via WhatsApp</a>
+      </div>
+
+      <!-- Marketing Digital e SEO Básico -->
+      <div class="servico-card">
+        <h3>Marketing Digital e SEO Básico</h3>
+        <p>Se sua empresa não aparece, ela não existe. Otimização para Google, conteúdo institucional e presença online estratégica.</p>
+        <a href="javascript:void(0)" onclick="abrirWhatsApp('Olá! Tenho interesse em marketing digital e SEO básico para minha empresa.')" class="whatsapp-btn">Solicitar via WhatsApp</a>
+      </div>
+    </div>
+  </div>
+   <div>
+  <a href="javascript:void(0)" onclick="voltarInicio()" class="voltar">← Voltar à página inicial</a>
+  </div>
 </body>
 </html>
