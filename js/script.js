@@ -156,7 +156,6 @@ function gerarCategorias(lista) {
     });
   });
 }
-  });
 
 function renderizarProdutos(lista) {
   produtosContainer.innerHTML = "";
