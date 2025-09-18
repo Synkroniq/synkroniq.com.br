@@ -114,6 +114,7 @@ categorias.forEach(cat => {
 const filtroCategorias = document.getElementById("filtroCategorias");
 let todosProdutos = [];
 
+if (filtroCategorias) {
 fetch("js/produtos.json")
   .then(res => res.json())
   .then(data => {
