@@ -36,6 +36,7 @@ menuLinks.forEach((link) => {
 
 // Rodapé: mostrar seções ocultas
 document.addEventListener("DOMContentLoaded", () => {
+  // Rodapé: mostrar seções ocultas
   const footerLinks = document.querySelectorAll(".footer-links a");
   const infoSections = document.querySelectorAll(".info-oculta");
 
@@ -51,6 +52,37 @@ document.addEventListener("DOMContentLoaded", () => {
         target.scrollIntoView({ behavior: "smooth" });
       }
     });
+  });
+
+  // Menu: controle de submenus
+  const toggles = document.querySelectorAll(".submenu-toggle");
+
+  toggles.forEach((toggle) => {
+    const button = toggle.querySelector(".menu-btn");
+    const submenu = toggle.querySelector(".submenu");
+
+    button.addEventListener("click", () => {
+      // Fecha todos os outros submenus
+      document.querySelectorAll(".submenu").forEach((sm) => {
+        if (sm !== submenu) sm.classList.remove("ativo");
+      });
+
+      // Alterna o submenu clicado
+      submenu.classList.toggle("ativo");
+    });
+  });
+
+  // Fecha submenus ao clicar fora
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".submenu-toggle")) {
+      document.querySelectorAll(".submenu").forEach((sm) => sm.classList.remove("ativo"));
+    }
+  });
+});
+
+document.querySelectorAll(".submenu a").forEach((link) => {
+  link.addEventListener("click", () => {
+    document.querySelectorAll(".submenu").forEach((sm) => sm.classList.remove("ativo"));
   });
 });
 
