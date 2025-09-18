@@ -73,10 +73,9 @@ window.addEventListener("load", function () {
     sessionStorage.setItem("instagramModalShown", "true");
   }
 
-  document.getElementById("continueInstagramBtn").addEventListener("click", continueInInstagram);
-});
-
-  document.getElementById("openBrowserBtn").addEventListener("click", openInBrowser);
-  document.getElementById("continueInstagramBtn").addEventListener("click", continueInInstagram);
+const continueBtn = document.getElementById("continueInstagramBtn");
+  if (continueBtn) {
+    continueBtn.addEventListener("click", continueInInstagram);
+  }
 });
 
