@@ -107,6 +107,42 @@ fetch("js/produtos.json")
     todosProdutos = data;
     gerarCategorias(data);
     renderizarProdutos(data);
+    const filtroCategorias = document.getElementById("filtroCategorias");
+
+function gerarCategorias(lista) {
+  const categoriasUnicas = [...new Set(lista.map(p => p.categoria))].sort();
+
+  filtroCategorias.innerHTML = "";
+
+  const todas = document.createElement("span");
+  todas.textContent = "Todas";
+  todas.dataset.categoria = "todos";
+  todas.classList.add("ativo");
+  filtroCategorias.appendChild(todas);
+
+  categoriasUnicas.forEach(cat => {
+    const span = document.createElement("span");
+    span.textContent = cat;
+    span.dataset.categoria = cat;
+    filtroCategorias.appendChild(span);
+  });
+
+  // Adiciona eventos
+  const spans = filtroCategorias.querySelectorAll("span");
+  spans.forEach(span => {
+    span.addEventListener("click", () => {
+      spans.forEach(s => s.classList.remove("ativo"));
+      span.classList.add("ativo");
+
+      const categoriaSelecionada = span.dataset.categoria;
+      const filtrados = categoriaSelecionada === "todos"
+        ? todosProdutos
+        : todosProdutos.filter(p => p.categoria === categoriaSelecionada);
+
+      renderizarProdutos(filtrados);
+    });
+  });
+}
   });
 
 function renderizarProdutos(lista) {
