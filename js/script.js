@@ -99,6 +99,7 @@ categorias.forEach(cat => {
     renderizarProdutos(filtrados);
   });
 });
+const filtroCategorias = document.getElementById("filtroCategorias");
 let todosProdutos = [];
 
 fetch("js/produtos.json")
@@ -107,8 +108,8 @@ fetch("js/produtos.json")
     todosProdutos = data;
     gerarCategorias(data);
     renderizarProdutos(data);
-    const filtroCategorias = document.getElementById("filtroCategorias");
-
+  });
+    
 function gerarCategorias(lista) {
   const categoriasUnicas = [...new Set(lista.map(p => p.categoria))].sort();
 
