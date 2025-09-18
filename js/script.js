@@ -1,15 +1,4 @@
 
-    // Fecha todos os submenus
-    document.querySelectorAll('.submenu').forEach(s => s.classList.remove('ativo'));
-
-    // Se estava fechado, abre; se já estava aberto, fecha
-    if (!isOpen) {
-      submenu.classList.add('ativo');
-    }
-  });
-});
-
-
 // Scroll suave para seções do menu principal
 const menuLinks = document.querySelectorAll(".menu a, .submenu a");
 
