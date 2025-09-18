@@ -78,6 +78,9 @@ body {
   z-index: 10;
 }
 
+.submenu.ativo {
+  display: block;
+}
 
 .submenu li a {
   color: #fff;
@@ -186,15 +189,12 @@ footer {
 /* Seções ocultas */
 .info-oculta {
   display: none;
-  padding: 2rem;
-  background-color: #fff;
-  border-top: 1px solid #ccc;
-}
-.info-oculta {
-  display: none;
   opacity: 0;
   max-height: 0;
   overflow: hidden;
+  padding: 2rem;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
   transition: all 0.5s ease;
 }
 
