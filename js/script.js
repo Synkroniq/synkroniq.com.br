@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       submenu.classList.toggle("ativo");
     });
   });
+});
 
   // Fecha submenus ao clicar fora
   document.addEventListener("click", (e) => {
