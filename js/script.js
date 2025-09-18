@@ -40,19 +40,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const footerLinks = document.querySelectorAll(".footer-links a");
   const infoSections = document.querySelectorAll(".info-oculta");
 
-  footerLinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault(); // Impede o salto pro topo
-      const targetId = link.dataset.id;
-      infoSections.forEach((sec) => {
-        sec.style.display = sec.id === targetId ? "block" : "none";
-      });
-      const target = document.getElementById(targetId);
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
-      }
+footerLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetId = link.dataset.id;
+
+    infoSections.forEach((sec) => {
+      sec.classList.remove("ativo");
     });
+
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.classList.add("ativo");
+      target.scrollIntoView({ behavior: "smooth" });
+    }
   });
+});
 
   // Menu: controle de submenus
   const toggles = document.querySelectorAll(".submenu-toggle");
