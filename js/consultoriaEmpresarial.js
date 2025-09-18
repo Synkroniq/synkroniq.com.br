@@ -1,5 +1,5 @@
 function abrirWhatsApp(mensagem) {
-  const numero = "5544999999999"; // ← Substitua pelo número real da Synkroniq
+  const numero = "5544997648490"; // ← Substitua pelo número real da Synkroniq
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
   window.open(url, '_blank');
 }
