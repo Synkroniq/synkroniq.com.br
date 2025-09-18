@@ -26,28 +26,25 @@ menuLinks.forEach((link) => {
   });
 });
 
-// Rodapé: mostrar seções ocultas
 document.addEventListener("DOMContentLoaded", () => {
   // Rodapé: mostrar seções ocultas
   const footerLinks = document.querySelectorAll(".footer-links a");
   const infoSections = document.querySelectorAll(".info-oculta");
 
-footerLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const targetId = link.dataset.id;
+  footerLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = link.dataset.id;
 
-    infoSections.forEach((sec) => {
-      sec.classList.remove("ativo");
+      infoSections.forEach((sec) => sec.classList.remove("ativo"));
+
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.classList.add("ativo");
+        target.scrollIntoView({ behavior: "smooth" });
+      }
     });
-
-    const target = document.getElementById(targetId);
-    if (target) {
-      target.classList.add("ativo");
-      target.scrollIntoView({ behavior: "smooth" });
-    }
   });
-});
 
   // Menu: controle de submenus
   const toggles = document.querySelectorAll(".submenu-toggle");
@@ -56,13 +53,11 @@ footerLinks.forEach((link) => {
     const button = toggle.querySelector(".menu-btn");
     const submenu = toggle.querySelector(".submenu");
 
-    button.addEventListener("click", () => {
-      // Fecha todos os outros submenus
+    button.addEventListener("click", (e) => {
+      e.stopPropagation(); // Evita conflito com clique fora
       document.querySelectorAll(".submenu").forEach((sm) => {
         if (sm !== submenu) sm.classList.remove("ativo");
       });
-
-      // Alterna o submenu clicado
       submenu.classList.toggle("ativo");
     });
   });
@@ -73,11 +68,12 @@ footerLinks.forEach((link) => {
       document.querySelectorAll(".submenu").forEach((sm) => sm.classList.remove("ativo"));
     }
   });
-});
 
-document.querySelectorAll(".submenu a").forEach((link) => {
-  link.addEventListener("click", () => {
-    document.querySelectorAll(".submenu").forEach((sm) => sm.classList.remove("ativo"));
+  // Fecha submenu ao clicar em um link interno
+  document.querySelectorAll(".submenu a").forEach((link) => {
+    link.addEventListener("click", () => {
+      document.querySelectorAll(".submenu").forEach((sm) => sm.classList.remove("ativo"));
+    });
   });
 });
 
