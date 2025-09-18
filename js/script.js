@@ -84,13 +84,28 @@ const produtosContainer = document.getElementById("produtos");
 const buscaInput = document.getElementById("buscaProduto");
 const alternarBtn = document.getElementById("alternarVisualizacao");
 const letras = document.querySelectorAll(".filtro-alfabeto span");
+const categorias = document.querySelectorAll(".filtro-categorias span");
 
+categorias.forEach(cat => {
+  cat.addEventListener("click", () => {
+    const categoriaSelecionada = cat.dataset.categoria;
+    categorias.forEach(c => c.classList.remove("ativo"));
+    cat.classList.add("ativo");
+
+    const filtrados = categoriaSelecionada === "todos"
+      ? todosProdutos
+      : todosProdutos.filter(p => p.categoria === categoriaSelecionada);
+
+    renderizarProdutos(filtrados);
+  });
+});
 let todosProdutos = [];
 
 fetch("js/produtos.json")
   .then(res => res.json())
   .then(data => {
     todosProdutos = data;
+    gerarCategorias(data);
     renderizarProdutos(data);
   });
 
@@ -105,39 +120,12 @@ function renderizarProdutos(lista) {
     div.innerHTML = `
       <img src="${produto.imagem}" alt="${produto.nome}">
       <h3>${produto.nome}</h3>
+      <p class="categoria">${produto.categoria}</p>
+      <p class="preco">R$ ${produto.preco.toFixed(2)}</p>
       <p>${produto.descricao}</p>
-      <a href="#" class="botao">Ver mais</a>
+      <a href="${produto.linkAfiliado}" target="_blank" class="botao">Comprar com Desconto</a>
     `;
 
     produtosContainer.appendChild(div);
   });
 }
-
-buscaInput.addEventListener("input", () => {
-  const termo = buscaInput.value.toLowerCase();
-  const filtrados = todosProdutos.filter(p => p.nome.toLowerCase().includes(termo));
-  renderizarProdutos(filtrados);
-});
-
-alternarBtn.addEventListener("click", () => {
-  produtosContainer.classList.toggle("grade");
-  produtosContainer.classList.toggle("lista");
-});
-
-letras.forEach(letra => {
-  letra.addEventListener("click", () => {
-    const letraSelecionada = letra.dataset.letra;
-    letras.forEach(l => l.classList.remove("ativo"));
-    letra.classList.add("ativo");
-
-    if (letraSelecionada === "todos") {
-      renderizarProdutos(todosProdutos);
-    } else {
-      const filtrados = todosProdutos.filter(p =>
-        p.nome.toLowerCase().startsWith(letraSelecionada)
-      );
-      renderizarProdutos(filtrados);
-    }
-  });
-});
-
