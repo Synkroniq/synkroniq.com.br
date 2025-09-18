@@ -1,0 +1,17 @@
+[
+  {
+    "nome": "SSD Kingston 480GB",
+    "descricao": "Alta velocidade e confiabilidade.",
+    "imagem": "img/ssd.jpg"
+  },
+  {
+    "nome": "Adaptador USB Wi-Fi",
+    "descricao": "Conectividade sem fio para seu PC.",
+    "imagem": "img/adaptador.jpg"
+  },
+  {
+    "nome": "Mouse Gamer RGB",
+    "descricao": "Precisão e estilo para jogos.",
+    "imagem": "img/mouse.jpg"
+  }
+]
