@@ -2,16 +2,25 @@
   {
     "nome": "SSD Kingston 480GB",
     "descricao": "Alta velocidade e confiabilidade.",
-    "imagem": "img/ssd.jpg"
+    "imagem": "img/ssd.jpg",
+    "preco": 199.90,
+    "categoria": "Armazenamento",
+    "linkAfiliado": "https://afiliado.com/ssd-kingston"
   },
   {
     "nome": "Adaptador USB Wi-Fi",
     "descricao": "Conectividade sem fio para seu PC.",
-    "imagem": "img/adaptador.jpg"
+    "imagem": "img/adaptador.jpg",
+    "preco": 89.90,
+    "categoria": "Conectividade",
+    "linkAfiliado": "https://afiliado.com/adaptador-wifi"
   },
   {
     "nome": "Mouse Gamer RGB",
     "descricao": "Precisão e estilo para jogos.",
-    "imagem": "img/mouse.jpg"
+    "imagem": "img/mouse.jpg",
+    "preco": 149.90,
+    "categoria": "Periféricos",
+    "linkAfiliado": "https://afiliado.com/mouse-gamer"
   }
 ]
