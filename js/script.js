@@ -177,4 +177,3 @@ function renderizarProdutos(lista) {
 
     produtosContainer.appendChild(div);
   });
-}
