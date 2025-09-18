@@ -1,11 +1,3 @@
-const submenuToggles = document.querySelectorAll('.submenu-toggle');
-
-submenuToggles.forEach(toggle => {
-  const button = toggle.querySelector('.menu-btn');
-  const submenu = toggle.querySelector('.submenu');
-
-  button.addEventListener('click', () => {
-    const isOpen = submenu.classList.contains('ativo');
 
     // Fecha todos os submenus
     document.querySelectorAll('.submenu').forEach(s => s.classList.remove('ativo'));
