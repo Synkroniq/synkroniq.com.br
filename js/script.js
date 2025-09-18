@@ -54,11 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-  function openInBrowser() {
-  window.location.href = "https://www.synkroniq.com.br";
-}
-
+// modal-instagram
 function continueInInstagram() {
   document.getElementById("instagramModal").style.display = "none";
   alert("⚠️ Você optou por continuar no Instagram. Ao clicar em links de compra, selecione 'Abrir no navegador' para garantir o funcionamento correto.");
@@ -76,6 +72,9 @@ window.addEventListener("load", function () {
     document.getElementById("instagramModal").style.display = "flex";
     sessionStorage.setItem("instagramModalShown", "true");
   }
+
+  document.getElementById("continueInstagramBtn").addEventListener("click", continueInInstagram);
+});
 
   document.getElementById("openBrowserBtn").addEventListener("click", openInBrowser);
   document.getElementById("continueInstagramBtn").addEventListener("click", continueInInstagram);
