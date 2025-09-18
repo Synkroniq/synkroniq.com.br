@@ -79,3 +79,65 @@ const continueBtn = document.getElementById("continueInstagramBtn");
   }
 });
 
+//ProdutosJSON
+const produtosContainer = document.getElementById("produtos");
+const buscaInput = document.getElementById("buscaProduto");
+const alternarBtn = document.getElementById("alternarVisualizacao");
+const letras = document.querySelectorAll(".filtro-alfabeto span");
+
+let todosProdutos = [];
+
+fetch("js/produtos.json")
+  .then(res => res.json())
+  .then(data => {
+    todosProdutos = data;
+    renderizarProdutos(data);
+  });
+
+function renderizarProdutos(lista) {
+  produtosContainer.innerHTML = "";
+
+  lista.forEach(produto => {
+    const div = document.createElement("div");
+    div.className = "produto";
+    div.dataset.nome = produto.nome.toLowerCase();
+
+    div.innerHTML = `
+      <img src="${produto.imagem}" alt="${produto.nome}">
+      <h3>${produto.nome}</h3>
+      <p>${produto.descricao}</p>
+      <a href="#" class="botao">Ver mais</a>
+    `;
+
+    produtosContainer.appendChild(div);
+  });
+}
+
+buscaInput.addEventListener("input", () => {
+  const termo = buscaInput.value.toLowerCase();
+  const filtrados = todosProdutos.filter(p => p.nome.toLowerCase().includes(termo));
+  renderizarProdutos(filtrados);
+});
+
+alternarBtn.addEventListener("click", () => {
+  produtosContainer.classList.toggle("grade");
+  produtosContainer.classList.toggle("lista");
+});
+
+letras.forEach(letra => {
+  letra.addEventListener("click", () => {
+    const letraSelecionada = letra.dataset.letra;
+    letras.forEach(l => l.classList.remove("ativo"));
+    letra.classList.add("ativo");
+
+    if (letraSelecionada === "todos") {
+      renderizarProdutos(todosProdutos);
+    } else {
+      const filtrados = todosProdutos.filter(p =>
+        p.nome.toLowerCase().startsWith(letraSelecionada)
+      );
+      renderizarProdutos(filtrados);
+    }
+  });
+});
+
