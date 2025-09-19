@@ -681,3 +681,29 @@ footer {
   background-color: #00c853;
   color: #fff;
 }
+
+.balao-voltar {
+  display: inline-block;
+  background-color: #00c853; /* verde vibrante */
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.balao-voltar:hover {
+  background-color: #009624;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .balao-voltar {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 1rem;
+  }
+}
