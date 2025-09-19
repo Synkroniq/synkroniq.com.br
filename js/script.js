@@ -94,25 +94,8 @@ document.addEventListener("DOMContentLoaded", () => {
             renderizarProdutos(filtrados);
           });
         });
-
-        // 🗂️ Filtro por categoria
-        categorias.forEach(cat => {
-          cat.addEventListener("click", () => {
-            const categoriaSelecionada = cat.dataset.categoria;
-            categorias.forEach(c => c.classList.remove("ativo"));
-            cat.classList.add("ativo");
-
-            const filtrados = categoriaSelecionada === "todos"
-              ? todosProdutos
-              : todosProdutos.filter(p => p.categoria === categoriaSelecionada);
-
-            renderizarProdutos(filtrados);
-          });
-        });
-      });
-  }
 });
-
+}
 // ⚠️ Modal Instagram
 function continueInInstagram() {
   document.getElementById("instagramModal").style.display = "none";
