@@ -1,3 +1,5 @@
+let todosProdutos = [];
+
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Script carregado!");
 
@@ -55,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const alternarBtn = document.getElementById("alternarVisualizacao");
   const letras = document.querySelectorAll(".filtro-alfabeto span");
   const filtroCategorias = document.getElementById("filtroCategorias");
-  let todosProdutos = [];
+  
 
   if (filtroCategorias) {
     fetch("js/produtos.json")
@@ -149,14 +151,16 @@ function gerarCategorias(lista) {
       spans.forEach(s => s.classList.remove("ativo"));
       span.classList.add("ativo");
 
-      const categoriaSelecionada = span.dataset.categoria;
-      const filtrados = categoriaSelecionada === "todos"
-      ? todosProdutos
-      : todosProdutos.filter(p =>
-          p.categoria.toLowerCase().trim() === categoriaSelecionada.toLowerCase().trim()
-        );
+const categoriaSelecionada = span.dataset.categoria;
 
-      renderizarProdutos(filtrados);
+const filtrados = categoriaSelecionada === "todos"
+  ? todosProdutos
+  : todosProdutos.filter(p =>
+      p.categoria &&
+      p.categoria.toLowerCase().trim() === categoriaSelecionada.toLowerCase().trim()
+    );
+
+renderizarProdutos(filtrados);
     });
   });
 }
