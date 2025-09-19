@@ -67,7 +67,7 @@ body {
 
 /* Submenu */
 .submenu {
-  display: none;
+  display: none !important;
   position: absolute;
   top: 100%;
   left: 0;
@@ -80,7 +80,7 @@ body {
 }
 
 .submenu.ativo {
-  display: block;
+  display: block !important;
 }
 
 .submenu li a {
