@@ -172,7 +172,6 @@ renderizarProdutos(filtrados);
 }
 
 function renderizarProdutos(lista) {
-  const produtosContainer = document.getElementById("produtos");
   produtosContainer.innerHTML = "";
 
   lista.forEach(produto => {
@@ -180,26 +179,17 @@ function renderizarProdutos(lista) {
     div.className = "produto";
     div.dataset.nome = produto.nome.toLowerCase();
 
+    const linkSeguro = `redirecionar.html?url=${encodeURIComponent(produto.linkAfiliado)}`;
+
     div.innerHTML = `
       <img src="${produto.imagem}" alt="${produto.nome}">
       <h3>${produto.nome}</h3>
       <p class="categoria">${produto.categoria}</p>
       <p class="preco">R$ ${produto.preco.toFixed(2)}</p>
       <p>${produto.descricao}</p>
-      <a href="${produto.linkAfiliado}" target="_blank" class="botao">Comprar com Desconto</a>
+      <a href="${linkSeguro}" target="_blank" class="botao">Comprar com Desconto</a>
     `;
 
     produtosContainer.appendChild(div);
   });
 }
-
-const linkSeguro = `redirecionar.html?url=${encodeURIComponent(produto.linkAfiliado)}`;
-
-div.innerHTML = `
-  <img src="${produto.imagem}" alt="${produto.nome}">
-  <h3>${produto.nome}</h3>
-  <p class="categoria">${produto.categoria}</p>
-  <p class="preco">R$ ${produto.preco.toFixed(2)}</p>
-  <p>${produto.descricao}</p>
-  <a href="${linkSeguro}" target="_blank" class="botao">Comprar com Desconto</a>
-`;
