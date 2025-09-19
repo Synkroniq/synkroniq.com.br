@@ -524,6 +524,17 @@ footer {
 }
 
 .filtro-alfabeto {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, max-height 0.3s ease, transform 0.3s ease;
+}
+
+.filtro-alfabeto.ativo {
+  opacity: 1;
+  max-height: 300px; /* ajuste conforme necessário */
+  transform: translateY(0);
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
