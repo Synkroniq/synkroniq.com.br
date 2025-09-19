@@ -53,11 +53,11 @@ body {
   cursor: pointer;
 }
 
-.menu ul li:not(:last-child)::after {
+/* .menu ul li:not(:last-child)::after {
   content: "|";
   margin-left: 0.5rem;
   color: #ccc;
-}
+} */
 
 .menu-btn:hover,
 .menu ul li a:hover {
