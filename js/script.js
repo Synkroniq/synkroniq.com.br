@@ -1,4 +1,4 @@
-
+console.log("Script carregado!");
 // Scroll suave para seções do menu principal
 const menuLinks = document.querySelectorAll(".menu a, .submenu a");
 
