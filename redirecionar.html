@@ -4,6 +4,27 @@
   <meta charset="UTF-8">
   <title>Redirecionando...</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+    .aviso {
+      background: #fff3cd;
+      color: #856404;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="aviso" id="avisoInstagram" style="display:none;">
+    ⚠️ Você está usando o Instagram. Para garantir que o link funcione corretamente, <strong>abra esta página no navegador padrão</strong>.
+  </div>
+  <p>Redirecionando para o site de compra...</p>
+
   <script>
     const params = new URLSearchParams(window.location.search);
     const destino = params.get("url");
@@ -12,13 +33,10 @@
     const isInstagram = ua.includes("instagram");
 
     if (isInstagram) {
-      alert("⚠️ Você está usando o Instagram. Para garantir que o link funcione corretamente, abra esta página no navegador padrão.");
-    } else {
+      document.getElementById("avisoInstagram").style.display = "block";
+    } else if (destino) {
       window.location.href = destino;
     }
   </script>
-</head>
-<body>
-  <p>Redirecionando para o site de compra...</p>
 </body>
 </html>
