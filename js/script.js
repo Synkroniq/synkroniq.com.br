@@ -1,9 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Script carregado!");
 
-  // Submenus interativos
+  // 🔽 Submenus interativos
   const toggles = document.querySelectorAll(".submenu-toggle");
-
   toggles.forEach((toggle) => {
     const button = toggle.querySelector(".menu-btn");
     const submenu = toggle.querySelector(".submenu");
@@ -21,22 +20,22 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".submenu").forEach((sm) => sm.classList.remove("ativo"));
   });
 
-  // Scroll suave para links internos
+  // 🧭 Scroll suave para âncoras internas
   const menuLinks = document.querySelectorAll(".menu a, .submenu a");
   menuLinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      const href = link.getAttribute("href");
-      if (href.startsWith("#")) {
+    const href = link.getAttribute("href");
+    if (href.startsWith("#")) {
+      link.addEventListener("click", (e) => {
         e.preventDefault();
         const target = document.querySelector(href);
         if (target) {
           target.scrollIntoView({ behavior: "smooth" });
         }
-      }
-    });
+      });
+    }
   });
 
-  // Rodapé interativo
+  // 📩 Rodapé interativo
   document.querySelectorAll(".footer-links a").forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
@@ -49,9 +48,72 @@ document.addEventListener("DOMContentLoaded", () => {
       target.scrollIntoView({ behavior: "smooth" });
     });
   });
+
+  // 🛍️ Produtos: busca, visualização, filtros
+  const produtosContainer = document.getElementById("produtos");
+  const buscaInput = document.getElementById("buscaProduto");
+  const alternarBtn = document.getElementById("alternarVisualizacao");
+  const letras = document.querySelectorAll(".filtro-alfabeto span");
+  const categorias = document.querySelectorAll(".filtro-categorias span");
+  const filtroCategorias = document.getElementById("filtroCategorias");
+  let todosProdutos = [];
+
+  if (filtroCategorias) {
+    fetch("js/produtos.json")
+      .then(res => res.json())
+      .then(data => {
+        todosProdutos = data;
+        gerarCategorias(data);
+        renderizarProdutos(data);
+
+        // 🔍 Busca por nome
+        buscaInput.addEventListener("input", () => {
+          const termo = buscaInput.value.toLowerCase();
+          const filtrados = todosProdutos.filter(p =>
+            p.nome.toLowerCase().includes(termo)
+          );
+          renderizarProdutos(filtrados);
+        });
+
+        // 🔁 Alternância entre grade e lista
+        alternarBtn.addEventListener("click", () => {
+          produtosContainer.classList.toggle("grade");
+          produtosContainer.classList.toggle("lista");
+        });
+
+        // 🔤 Filtro por letra inicial
+        letras.forEach(letra => {
+          letra.addEventListener("click", () => {
+            const inicial = letra.textContent.toLowerCase();
+            letras.forEach(l => l.classList.remove("ativo"));
+            letra.classList.add("ativo");
+
+            const filtrados = todosProdutos.filter(p =>
+              p.nome.toLowerCase().startsWith(inicial)
+            );
+            renderizarProdutos(filtrados);
+          });
+        });
+
+        // 🗂️ Filtro por categoria
+        categorias.forEach(cat => {
+          cat.addEventListener("click", () => {
+            const categoriaSelecionada = cat.dataset.categoria;
+            categorias.forEach(c => c.classList.remove("ativo"));
+            cat.classList.add("ativo");
+
+            const filtrados = categoriaSelecionada === "todos"
+              ? todosProdutos
+              : todosProdutos.filter(p => p.categoria === categoriaSelecionada);
+
+            renderizarProdutos(filtrados);
+          });
+        });
+      });
+  }
 });
 
-// modal-instagram
+// ⚠️ Modal Instagram
 function continueInInstagram() {
   document.getElementById("instagramModal").style.display = "none";
   alert("⚠️ Você optou por continuar no Instagram. Ao clicar em links de compra, selecione 'Abrir no navegador' para garantir o funcionamento correto.");
@@ -70,45 +132,15 @@ window.addEventListener("load", function () {
     sessionStorage.setItem("instagramModalShown", "true");
   }
 
-const continueBtn = document.getElementById("continueInstagramBtn");
+  const continueBtn = document.getElementById("continueInstagramBtn");
   if (continueBtn) {
     continueBtn.addEventListener("click", continueInInstagram);
   }
 });
 
-//ProdutosJSON
-const produtosContainer = document.getElementById("produtos");
-const buscaInput = document.getElementById("buscaProduto");
-const alternarBtn = document.getElementById("alternarVisualizacao");
-const letras = document.querySelectorAll(".filtro-alfabeto span");
-const categorias = document.querySelectorAll(".filtro-categorias span");
-
-categorias.forEach(cat => {
-  cat.addEventListener("click", () => {
-    const categoriaSelecionada = cat.dataset.categoria;
-    categorias.forEach(c => c.classList.remove("ativo"));
-    cat.classList.add("ativo");
-
-    const filtrados = categoriaSelecionada === "todos"
-      ? todosProdutos
-      : todosProdutos.filter(p => p.categoria === categoriaSelecionada);
-
-    renderizarProdutos(filtrados);
-  });
-});
-const filtroCategorias = document.getElementById("filtroCategorias");
-let todosProdutos = [];
-
-if (filtroCategorias) {
-fetch("js/produtos.json")
-  .then(res => res.json())
-  .then(data => {
-    todosProdutos = data;
-    gerarCategorias(data);
-    renderizarProdutos(data);
-  });
-    
+// 🧠 Funções auxiliares
 function gerarCategorias(lista) {
+  const filtroCategorias = document.getElementById("filtroCategorias");
   const categoriasUnicas = [...new Set(lista.map(p => p.categoria))].sort();
 
   filtroCategorias.innerHTML = "";
@@ -126,7 +158,7 @@ function gerarCategorias(lista) {
     filtroCategorias.appendChild(span);
   });
 
-  // Adiciona eventos
+  // Eventos de clique nas categorias
   const spans = filtroCategorias.querySelectorAll("span");
   spans.forEach(span => {
     span.addEventListener("click", () => {
@@ -144,6 +176,7 @@ function gerarCategorias(lista) {
 }
 
 function renderizarProdutos(lista) {
+  const produtosContainer = document.getElementById("produtos");
   produtosContainer.innerHTML = "";
 
   lista.forEach(produto => {
@@ -162,5 +195,4 @@ function renderizarProdutos(lista) {
 
     produtosContainer.appendChild(div);
   });
-}
 }
