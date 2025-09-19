@@ -54,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const buscaInput = document.getElementById("buscaProduto");
   const alternarBtn = document.getElementById("alternarVisualizacao");
   const letras = document.querySelectorAll(".filtro-alfabeto span");
-  const categorias = document.querySelectorAll(".filtro-categorias span");
   const filtroCategorias = document.getElementById("filtroCategorias");
   let todosProdutos = [];
 
@@ -94,8 +93,10 @@ document.addEventListener("DOMContentLoaded", () => {
             renderizarProdutos(filtrados);
           });
         });
+      });
+  }
 });
-}
+
 // ⚠️ Modal Instagram
 function continueInInstagram() {
   document.getElementById("instagramModal").style.display = "none";
