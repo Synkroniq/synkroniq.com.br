@@ -16,19 +16,28 @@ menuLinks.forEach((link) => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const footerLinks = document.querySelectorAll(".footer-links a");
-  const infoSections = document.querySelectorAll(".info-oculta");
+  const toggles = document.querySelectorAll(".submenu-toggle");
 
-  footerLinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const targetId = link.dataset.id;
-      const target = document.getElementById(targetId);
-      if (!target) return;
+  toggles.forEach((toggle) => {
+    const button = toggle.querySelector(".menu-btn");
+    const submenu = toggle.querySelector(".submenu");
 
-      infoSections.forEach((sec) => sec.classList.remove("ativo"));
-      target.classList.add("ativo");
-      target.scrollIntoView({ behavior: "smooth" });
+    button.addEventListener("click", (e) => {
+      e.stopPropagation();
+      document.querySelectorAll(".submenu").forEach((sm) => {
+        if (sm !== submenu) sm.classList.remove("ativo");
+      });
+      submenu.classList.toggle("ativo");
+    });
+  });
+
+  document.addEventListener("click", () => {
+    document.querySelectorAll(".submenu").forEach((sm) => sm.classList.remove("ativo"));
+  });
+
+  document.querySelectorAll(".submenu a").forEach((link) => {
+    link.addEventListener("click", () => {
+      document.querySelectorAll(".submenu").forEach((sm) => sm.classList.remove("ativo"));
     });
   });
 });
