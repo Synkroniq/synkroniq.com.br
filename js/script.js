@@ -57,7 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const alternarBtn = document.getElementById("alternarVisualizacao");
   const letras = document.querySelectorAll(".letras-lista span");
   const filtroCategorias = document.getElementById("filtroCategorias");
-  
+  const toggleAlfabetoBtn = document.getElementById("toggleAlfabeto");
+  const filtroAlfabeto = document.querySelector(".filtro-alfabeto");
 
   if (filtroCategorias) {
     fetch("js/produtos.json")
@@ -83,9 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         // 🔤 Filtro por letra inicial
-const toggleAlfabetoBtn = document.getElementById("toggleAlfabeto");
-const filtroAlfabeto = document.querySelector(".filtro-alfabeto");
-
         
         toggleAlfabetoBtn.addEventListener("click", () => {
   filtroAlfabeto.classList.toggle("ativo");
