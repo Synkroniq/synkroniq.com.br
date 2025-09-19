@@ -2,25 +2,25 @@
   {
     "nome": "SSD Kingston 480GB",
     "descricao": "Alta velocidade e confiabilidade.",
-    "imagem": "img/ssd.jpg",
-    "preco": 199.90,
+    "imagem": "https://www.kabum.com.br/_next/image?url=https%3A%2F%2Fimages2.kabum.com.br%2Fprodutos%2Ffotos%2Fsync_mirakl%2F174032%2Fxlarge%2FSSD-Kingston-480GB-A400-SATA-Leitura-500MB-s-e-Grava-o-450MB-s-SA400S37-480G_1757712280.jpg&w=1920&q=75",
+    "preco": 279.00,
     "categoria": "Armazenamento",
-    "linkAfiliado": "https://afiliado.com/ssd-kingston"
+    "linkAfiliado": "https://www.awin1.com/cread.php?awinmid=17729&awinaffid=2555563&ued=https%3A%2F%2Fwww.kabum.com.br%2Fproduto%2F174032%2Fssd-kingston-480gb-a400-sata-leitura-500mb-s-e-gravacao-450mb-s-sa400s37-480g"
   },
   {
     "nome": "Adaptador USB Wi-Fi",
     "descricao": "Conectividade sem fio para seu PC.",
-    "imagem": "img/adaptador.jpg",
-    "preco": 89.90,
+    "imagem": "https://www.kabum.com.br/_next/image?url=https%3A%2F%2Fimages8.kabum.com.br%2Fprodutos%2Ffotos%2Fsync_mirakl%2F459468%2Fxlarge%2FAdaptador-WIFI-USB_1743000632.jpg&w=1920&q=75",
+    "preco": 21.62,
     "categoria": "Conectividade",
-    "linkAfiliado": "https://afiliado.com/adaptador-wifi"
+    "linkAfiliado": "https://www.awin1.com/cread.php?awinmid=17729&awinaffid=2555563&ued=https%3A%2F%2Fwww.kabum.com.br%2Fproduto%2F459468%2Fadaptador-wifi-usb"
   },
   {
     "nome": "Mouse Gamer RGB",
     "descricao": "Precisão e estilo para jogos.",
-    "imagem": "img/mouse.jpg",
-    "preco": 149.90,
+    "imagem": "https://www.kabum.com.br/_next/image?url=https%3A%2F%2Fimages8.kabum.com.br%2Fprodutos%2Ffotos%2Fsync_mirakl%2F738618%2Fxlarge%2FMouse-Gamer-Usb-Com-Fio-1000-Dpi-Mo-g16-RGB-Cabo-De-1-20m_1743076847.jpg&w=1920&q=75",
+    "preco": 13.07,
     "categoria": "Periféricos",
-    "linkAfiliado": "https://afiliado.com/mouse-gamer"
+    "linkAfiliado": "https://www.awin1.com/cread.php?awinmid=17729&awinaffid=2555563&ued=https%3A%2F%2Fwww.kabum.com.br%2Fproduto%2F738618%2Fmouse-gamer-usb-com-fio-1000-dpi-mo-g16-rgb-cabo-de-1-20m"
   }
 ]
