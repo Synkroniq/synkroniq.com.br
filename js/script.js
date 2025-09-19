@@ -34,12 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", () => {
     document.querySelectorAll(".submenu").forEach((sm) => sm.classList.remove("ativo"));
   });
-
-  document.querySelectorAll(".submenu a").forEach((link) => {
-    link.addEventListener("click", () => {
-      document.querySelectorAll(".submenu").forEach((sm) => sm.classList.remove("ativo"));
-    });
-  });
 });
 
 // modal-instagram
