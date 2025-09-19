@@ -68,6 +68,15 @@ body {
 /* Submenu */
 .submenu {
   display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #0a1f44;
+  padding: 0.8rem;
+  border-radius: 6px;
+  min-width: 180px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
 }
 
 .submenu.ativo {
