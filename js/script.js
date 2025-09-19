@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const produtosContainer = document.getElementById("produtos");
   const buscaInput = document.getElementById("buscaProduto");
   const alternarBtn = document.getElementById("alternarVisualizacao");
-  const letras = document.querySelectorAll(".filtro-alfabeto span");
+  const letras = document.querySelectorAll(".letras-lista span");
   const filtroCategorias = document.getElementById("filtroCategorias");
   
 
@@ -83,6 +83,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         // 🔤 Filtro por letra inicial
+const toggleAlfabetoBtn = document.getElementById("toggleAlfabeto");
+const filtroAlfabeto = document.querySelector(".filtro-alfabeto");
+
+        
+        toggleAlfabetoBtn.addEventListener("click", () => {
+  filtroAlfabeto.classList.toggle("ativo");
+});
+
         letras.forEach(letra => {
           letra.addEventListener("click", () => {
             const inicial = letra.textContent.toLowerCase();
