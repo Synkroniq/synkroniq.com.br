@@ -1,6 +1,8 @@
 let todosProdutos = [];
+let produtosContainer;
 
 document.addEventListener("DOMContentLoaded", () => {
+  produtosContainer = document.getElementById("produtos");
   console.log("Script carregado!");
 
   // 🔽 Submenus interativos
@@ -52,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // 🛍️ Produtos: busca, visualização, filtros
-  const produtosContainer = document.getElementById("produtos");
+ 
   const buscaInput = document.getElementById("buscaProduto");
   const alternarBtn = document.getElementById("alternarVisualizacao");
   const letras = document.querySelectorAll(".letras-lista span");
