@@ -151,8 +151,10 @@ function gerarCategorias(lista) {
 
       const categoriaSelecionada = span.dataset.categoria;
       const filtrados = categoriaSelecionada === "todos"
-        ? todosProdutos
-        : todosProdutos.filter(p => p.categoria === categoriaSelecionada);
+      ? todosProdutos
+      : todosProdutos.filter(p =>
+          p.categoria.toLowerCase().trim() === categoriaSelecionada.toLowerCase().trim()
+        );
 
       renderizarProdutos(filtrados);
     });
