@@ -36,6 +36,19 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.querySelectorAll(".footer-links a").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault(); // ← ESSENCIAL
+    const targetId = link.dataset.id;
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    document.querySelectorAll(".info-oculta").forEach((sec) => sec.classList.remove("ativo"));
+    target.classList.add("ativo");
+    target.scrollIntoView({ behavior: "smooth" });
+  });
+});
+
 // modal-instagram
 function continueInInstagram() {
   document.getElementById("instagramModal").style.display = "none";
