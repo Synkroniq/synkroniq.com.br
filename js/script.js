@@ -1,21 +1,7 @@
-console.log("Script carregado!");
-// Scroll suave para seções do menu principal
-const menuLinks = document.querySelectorAll(".menu a, .submenu a");
-
-menuLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    const href = link.getAttribute("href");
-    if (href.startsWith("#")) {
-      e.preventDefault();
-      const target = document.querySelector(href);
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  });
-});
-
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("Script carregado!");
+
+  // Submenus interativos
   const toggles = document.querySelectorAll(".submenu-toggle");
 
   toggles.forEach((toggle) => {
@@ -34,18 +20,34 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", () => {
     document.querySelectorAll(".submenu").forEach((sm) => sm.classList.remove("ativo"));
   });
-});
 
-document.querySelectorAll(".footer-links a").forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault(); // ← ESSENCIAL
-    const targetId = link.dataset.id;
-    const target = document.getElementById(targetId);
-    if (!target) return;
+  // Scroll suave para links internos
+  const menuLinks = document.querySelectorAll(".menu a, .submenu a");
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href");
+      if (href.startsWith("#")) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    });
+  });
 
-    document.querySelectorAll(".info-oculta").forEach((sec) => sec.classList.remove("ativo"));
-    target.classList.add("ativo");
-    target.scrollIntoView({ behavior: "smooth" });
+  // Rodapé interativo
+  document.querySelectorAll(".footer-links a").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = link.dataset.id;
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      document.querySelectorAll(".info-oculta").forEach((sec) => sec.classList.remove("ativo"));
+      target.classList.add("ativo");
+      target.scrollIntoView({ behavior: "smooth" });
+    });
   });
 });
 
