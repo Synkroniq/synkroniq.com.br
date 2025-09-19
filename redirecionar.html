@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecionando...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const destino = params.get("url");
+
+    const ua = navigator.userAgent.toLowerCase();
+    const isInstagram = ua.includes("instagram");
+
+    if (isInstagram) {
+      alert("⚠️ Você está usando o Instagram. Para garantir que o link funcione corretamente, abra esta página no navegador padrão.");
+    } else {
+      window.location.href = destino;
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecionando para o site de compra...</p>
+</body>
+</html>
