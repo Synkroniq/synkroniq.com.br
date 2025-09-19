@@ -17,41 +17,49 @@
 <section class="produtos-container">
   <h2>Aproveite!</h2>
 
-  <!-- Controles -->
-  <div class="produtos-controles">
-    <input type="text" id="buscaProduto" placeholder="Buscar produto...">
-    <button id="alternarVisualizacao">🔳 Grade / 📋 Lista</button>
+<!-- 🔧 Controles de produto -->
+<div class="produtos-controles">
+  <input type="text" id="buscaProduto" placeholder="Buscar produto...">
+
+  <div class="botoes-produtos">
+    <button id="alternarVisualizacao">Grade/Lista</button>
+    <button id="toggleAlfabeto">Filtrar por letra ▾</button>
   </div>
+</div>
 
   <!-- Filtro alfabético -->
-  <div class="filtro-alfabeto">
-    <span data-letra="todos" class="ativo">Todos</span>
-    <span data-letra="A">A</span>
-    <span data-letra="B">B</span>
-    <span data-letra="C">C</span>
-    <span data-letra="D">D</span>
-    <span data-letra="E">E</span>
-    <span data-letra="F">F</span>
-    <span data-letra="G">G</span>
-    <span data-letra="H">H</span>
-    <span data-letra="I">I</span>
-    <span data-letra="J">J</span>
-    <span data-letra="K">K</span>
-    <span data-letra="L">L</span>
-    <span data-letra="M">M</span>
-    <span data-letra="N">N</span>
-    <span data-letra="O">O</span>
-    <span data-letra="P">P</span>
-    <span data-letra="Q">Q</span>
-    <span data-letra="R">R</span>
-    <span data-letra="S">S</span>
-    <span data-letra="T">T</span>
-    <span data-letra="U">U</span>
-    <span data-letra="V">V</span>
-    <span data-letra="Y">Y</span>
-    <span data-letra="X">X</span>
-    <span data-letra="Z">Z</span>
+<div class="filtro-alfabeto-wrapper">
+  <div class="filtro-alfabeto oculto">
+    <div class="letras-lista">
+    <span>A</span>
+    <span>B</span>     
+    <span>C</span>
+    <span>D</span>
+    <span>E</span>
+    <span>F</span>
+    <span>G</span>
+    <span>H</span>
+    <span>I</span>
+    <span>J</span>
+    <span>K</span>
+    <span>L</span>
+    <span>M</span>
+    <span>N</span>
+    <span>O</span>
+    <span>P</span>
+    <span>Q</span>
+    <span>R</span>
+    <span>S</span>
+    <span>T</span>
+    <span>U</span>
+    <span>V</span>
+    <span>W</span>
+    <span>X</span>
+    <span>Y</span>
+    <span>Z</span>
+    </div>
   </div>
+</div>
 
     <!-- Filtro por categoria (gerado dinamicamente) -->
 <div id="filtroCategorias" class="filtro-categorias"></div>
@@ -59,8 +67,10 @@
   <div id="produtos" class="grade"></div>
 </section>
 
-  
-<a href="index.html">← Voltar à página inicial</a>
+ <footer>
+   <a href="index.html">← Voltar à página inicial</a>
+ </footer>
+
   
 <script src="js/script.js"></script>
 </body>
