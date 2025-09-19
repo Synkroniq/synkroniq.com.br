@@ -1,0 +1,91 @@
+.filtro-alfabeto-wrapper {
+  margin-bottom: 20px;
+}
+
+#toggleAlfabeto {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  text-align: left;
+}
+
+.filtro-alfabeto {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.filtro-alfabeto.ativo {
+  max-height: 300px; /* altura suficiente para mostrar as letras */
+}
+
+.letras-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.letras-lista span {
+  padding: 6px 10px;
+  background-color: #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.letras-lista span.ativo {
+  background-color: #333;
+  color: #fff;
+}
+
+/* 📱 Responsivo para celular */
+@media (max-width: 600px) {
+  .letras-lista {
+    flex-direction: column;
+    max-height: 200px;
+  }
+
+  #toggleAlfabeto {
+    font-size: 16px;
+  }
+}
+
+/* */
+.botoes-produtos {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.botoes-produtos button {
+  padding: 8px 12px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+}
+
+/* 📱 Responsivo para celular */
+@media (max-width: 600px) {
+  .botoes-produtos {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .botoes-produtos button {
+    width: 100%;
+    font-size: 16px;
+  }
+}
