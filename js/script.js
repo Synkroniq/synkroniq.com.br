@@ -1,5 +1,7 @@
 let todosProdutos = [];
 let produtosContainer;
+let produtosPorPagina = 30;
+let paginaAtual = 1;
 
 document.addEventListener("DOMContentLoaded", () => {
   produtosContainer = document.getElementById("produtos");
@@ -68,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(data => {
         todosProdutos = data;
         gerarCategorias(data);
-        renderizarProdutos(data);
+        renderizarPagina(1);
 
         // 🔍 Busca por nome
         buscaInput.addEventListener("input", () => {
@@ -194,4 +196,40 @@ function renderizarProdutos(lista) {
 
     produtosContainer.appendChild(div);
   });
+}
+
+function renderizarPagina(pagina) {
+  const inicio = (pagina - 1) * produtosPorPagina;
+  const fim = inicio + produtosPorPagina;
+  const produtosPagina = todosProdutos.slice(inicio, fim);
+  renderizarProdutos(produtosPagina);
+  atualizarControles(pagina);
+}
+
+function atualizarControles(pagina) {
+  const totalPaginas = Math.ceil(todosProdutos.length / produtosPorPagina);
+  const controlesContainer = document.getElementById("controles");
+  controlesContainer.innerHTML = "";
+
+  if (pagina > 1) {
+    const btnAnterior = document.createElement("button");
+    btnAnterior.textContent = "← Anterior";
+    btnAnterior.onclick = () => renderizarPagina(pagina - 1);
+    controlesContainer.appendChild(btnAnterior);
+  }
+
+  for (let i = 1; i <= totalPaginas; i++) {
+    const btn = document.createElement("button");
+    btn.textContent = i;
+    btn.className = (i === pagina) ? "ativo" : "";
+    btn.onclick = () => renderizarPagina(i);
+    controlesContainer.appendChild(btn);
+  }
+
+  if (pagina < totalPaginas) {
+    const btnProximo = document.createElement("button");
+    btnProximo.textContent = "Próxima →";
+    btnProximo.onclick = () => renderizarPagina(pagina + 1);
+    controlesContainer.appendChild(btnProximo);
+  }
 }
