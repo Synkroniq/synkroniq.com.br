@@ -110,3 +110,28 @@
   background-color: #0074d9;
   font-weight: bold;
 }
+.botao.esgotado {
+  background-color: #999;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.contador {
+  margin-top: 8px;
+  font-weight: bold;
+  color: #d60000;
+  font-size: 0.9em;
+  text-align: center;
+}
+  
+.riscado {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 8px;
+}
+
+.preco strong {
+  color: #d60000;
+  font-size: 1.1em;
+}
+  
