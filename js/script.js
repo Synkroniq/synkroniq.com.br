@@ -1,3 +1,5 @@
+"use strict";
+
 let todosProdutos = [];
 let produtosContainer;
 let produtosPorPagina = 30;
@@ -181,13 +183,6 @@ renderizarProdutos(filtrados);
 
 function renderizarProdutos(lista) {
   produtosContainer.innerHTML = "";
-
-  div.innerHTML += `
-  <p class="preco">
-    <span class="riscado">R$ ${produto.precoOriginal.toFixed(2)}</span>
-    <strong>R$ ${produto.precoPromocional.toFixed(2)}</strong>
-  </p>
-`;
   
   lista.forEach(produto => {
     const div = document.createElement("div");
