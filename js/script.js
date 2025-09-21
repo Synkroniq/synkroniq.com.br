@@ -195,14 +195,13 @@ function renderizarProdutos(lista) {
       <p class="categoria">${produto.categoria}</p>
       <p class="preco">R$ ${produto.preco.toFixed(2)}</p>
       <p>${produto.descricao}</p>
-      <a href="${linkSeguro}" target="_blank" class="botao">Comprar com Desconto</a>
     `;
     if (produto.expiraEm) {
       const expira = new Date(produto.expiraEm);
       const agora = new Date();
     if (expira > agora) {
         div.innerHTML += `
-          <a href="${linkSeguro}" target="_blank" class="botao">Comprar com Desconto</a>
+          <a href="${linkSeguro}" target="_blank" class="botao">Comprar</a>
           <div class="contador" data-expira="${produto.expiraEm}"></div>
         `;
       } else {
