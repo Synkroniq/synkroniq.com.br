@@ -201,7 +201,7 @@ function renderizarProdutos(lista) {
       const agora = new Date();
     if (expira > agora) {
         div.innerHTML += `
-          <a href="${linkSeguro}" target="_blank" class="botao">Comprar</a>
+          <a href="${linkSeguro}" target="_blank" class="botao">Comprar com Desconto</a>
           <div class="contador" data-expira="${produto.expiraEm}"></div>
         `;
       } else {
