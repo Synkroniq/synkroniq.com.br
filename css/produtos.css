@@ -123,12 +123,6 @@
   font-size: 0.9em;
   text-align: center;
 }
-  
-.riscado {
-  text-decoration: line-through;
-  color: #999;
-  margin-right: 8px;
-}
 
 .preco strong {
   color: #d60000;
