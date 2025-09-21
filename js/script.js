@@ -137,7 +137,8 @@ window.addEventListener("load", function () {
 // 🧠 Funções auxiliares
 function gerarCategorias(lista) {
   const filtroCategorias = document.getElementById("filtroCategorias");
-  const categoriasUnicas = [...new Set(lista.map(p => p.categoria))].sort();
+  const todasCategorias = lista.flatMap(p => Array.isArray(p.categoria) ? p.categoria : [p.categoria]);
+  const categoriasUnicas = [...new Set(todasCategorias)].sort();
 
   filtroCategorias.innerHTML = "";
 
@@ -165,10 +166,12 @@ const categoriaSelecionada = span.dataset.categoria;
 
 const filtrados = categoriaSelecionada === "todos"
   ? todosProdutos
-  : todosProdutos.filter(p =>
-      p.categoria &&
-      p.categoria.toLowerCase().trim() === categoriaSelecionada.toLowerCase().trim()
-    );
+  : todosProdutos.filter(p => {
+      const categorias = Array.isArray(p.categoria) ? p.categoria : [p.categoria];
+      return categorias.some(cat =>
+        cat.toLowerCase().trim() === categoriaSelecionada.toLowerCase().trim()
+      );
+    });
 
 renderizarProdutos(filtrados);
     });
