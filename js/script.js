@@ -182,6 +182,13 @@ renderizarProdutos(filtrados);
 function renderizarProdutos(lista) {
   produtosContainer.innerHTML = "";
 
+  div.innerHTML += `
+  <p class="preco">
+    <span class="riscado">R$ ${produto.precoOriginal.toFixed(2)}</span>
+    <strong>R$ ${produto.precoPromocional.toFixed(2)}</strong>
+  </p>
+`;
+  
   lista.forEach(produto => {
     const div = document.createElement("div");
     div.className = "produto";
@@ -193,9 +200,22 @@ function renderizarProdutos(lista) {
       <img src="${produto.imagem}" alt="${produto.nome}">
       <h3>${produto.nome}</h3>
       <p class="categoria">${produto.categoria}</p>
-      <p class="preco">R$ ${produto.preco.toFixed(2)}</p>
       <p>${produto.descricao}</p>
     `;
+    
+    if (produto.precoOriginal && produto.precoPromocional) {
+  div.innerHTML += `
+    <p class="preco">
+      <span class="riscado">R$ ${produto.precoOriginal.toFixed(2)}</span>
+      <strong>R$ ${produto.precoPromocional.toFixed(2)}</strong>
+    </p>
+  `;
+} else {
+  div.innerHTML += `
+    <p class="preco"><strong>R$ ${produto.preco.toFixed(2)}</strong></p>
+  `;
+}
+
     if (produto.expiraEm) {
       const expira = new Date(produto.expiraEm);
       const agora = new Date();
