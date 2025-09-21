@@ -22,5 +22,21 @@
     "preco": 13.07,
     "categoria": "Periféricos",
     "linkAfiliado": "https://www.awin1.com/cread.php?awinmid=17729&awinaffid=2555563&ued=https%3A%2F%2Fwww.kabum.com.br%2Fproduto%2F738618%2Fmouse-gamer-usb-com-fio-1000-dpi-mo-g16-rgb-cabo-de-1-20m"
+  },
+    {
+    "nome": "Processador AMD Ryzen 5 5600GT",
+    "descricao": "6 núcleos e 12 threads com gráficos integrados Radeon Vega.",
+    "categoria": "Processadores",
+    "imagem": "https://www.kabum.com.br/_next/image?url=https%3A%2F%2Fimages8.kabum.com.br%2Fprodutos%2Ffotos%2Fsync_mirakl%2F523518%2Fxlarge%2FProcessador-AMD-Ryzen-5-5600GT-4-6GHz-Cache-19MB-AM4-6-n-cleos-12-threads-Placa-de-V-deo-Com-Cooler-100-100001488_1756303189.jpg&w=1920&q=75",
+    "preco": 830.53,
+    "linkAfiliado": "https://www.awin1.com/cread.php?awinmid=17729&awinaffid=2555563&clickref=processadores&ued=https%3A%2F%2Fwww.kabum.com.br%2Fproduto%2F523518%2Fprocessador-amd-ryzen-5-5600gt-4-6ghz-cache-19mb-am4-6-nucleos-12-threads-placa-de-video-com-cooler-100-100001488"
+  },
+  {
+    "nome": "Placa de Vídeo NVIDIA Galax GeForce RTX 3060",
+    "descricao": "Desempenho avançado para jogos e criação de conteúdo com Ray Tracing.",
+    "categoria": ["Placas de Vídeo", "Oferta Relampago"]
+    "imagem": "https://www.kabum.com.br/_next/image?url=https%3A%2F%2Fimages2.kabum.com.br%2Fprodutos%2Ffotos%2Fsync_mirakl%2F174762%2Fxlarge%2FPlaca-de-V-deo-Galax-NVIDIA-GeForce-RTX-3060-12GB-GDDR6-LHR-1-Click-OC-15GBps-Ray-Tracing-DLSS-36NOL7MD1VOC_1756833883.jpg&w=1920&q=75",
+    "preco": 1949.00,
+    "linkAfiliado": "https://www.awin1.com/cread.php?awinmid=17729&awinaffid=2555563&clickref=oferta+relampago&ued=https%3A%2F%2Fwww.kabum.com.br%2Fproduto%2F174762%2Fplaca-de-video-galax-nvidia-geforce-rtx-3060-12gb-gddr6-lhr-1-click-oc-15gbps-ray-tracing-dlss-36nol7md1voc"
   }
 ]
