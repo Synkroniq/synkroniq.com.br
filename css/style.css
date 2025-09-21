@@ -711,3 +711,9 @@ footer {
     font-size: 1rem;
   }
 }
+.riscado {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 8px;
+}
+  
