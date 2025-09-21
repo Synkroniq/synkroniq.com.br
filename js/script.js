@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
         todosProdutos = data;
         gerarCategorias(data);
         renderizarPagina(1);
+        setInterval(atualizarContadores, 1000);
 
         // 🔍 Busca por nome
         buscaInput.addEventListener("input", () => {
@@ -196,6 +197,20 @@ function renderizarProdutos(lista) {
       <p>${produto.descricao}</p>
       <a href="${linkSeguro}" target="_blank" class="botao">Comprar com Desconto</a>
     `;
+    if (produto.expiraEm) {
+      const expira = new Date(produto.expiraEm);
+      const agora = new Date();
+    if (expira > agora) {
+        div.innerHTML += `
+          <a href="${linkSeguro}" target="_blank" class="botao">Comprar com Desconto</a>
+          <div class="contador" data-expira="${produto.expiraEm}"></div>
+        `;
+      } else {
+        div.innerHTML += `<a class="botao esgotado">Oferta Esgotada</a>`;
+      }
+    } else {
+      div.innerHTML += `<a href="${linkSeguro}" target="_blank" class="botao">Comprar</a>`;
+    }
 
     produtosContainer.appendChild(div);
   });
@@ -235,4 +250,33 @@ function atualizarControles(pagina) {
     btnProximo.onclick = () => renderizarPagina(pagina + 1);
     controlesContainer.appendChild(btnProximo);
   }
+}
+
+function atualizarContadores() {
+  const contadores = document.querySelectorAll(".contador");
+
+  contadores.forEach(contador => {
+    const expiraEm = new Date(contador.dataset.expira);
+    const agora = new Date();
+    const tempo = expiraEm - agora;
+
+    const botao = contador.previousElementSibling;
+
+    if (tempo <= 0) {
+      botao.textContent = "Oferta Esgotada";
+      botao.classList.add("esgotado");
+      botao.removeAttribute("href");
+      botao.removeAttribute("target");
+      contador.remove();
+      return;
+    }
+
+    const segundos = Math.floor((tempo / 1000) % 60);
+    const minutos = Math.floor((tempo / 1000 / 60) % 60);
+    const horas = Math.floor((tempo / 1000 / 60 / 60) % 24);
+    const dias = Math.floor((tempo / 1000 / 60 / 60 / 24));
+
+    const texto = `TERMINA EM: ${dias}D ${horas.toString().padStart(2, '0')} : ${minutos.toString().padStart(2, '0')} : ${segundos.toString().padStart(2, '0')}`;
+    contador.textContent = texto;
+  });
 }
