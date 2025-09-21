@@ -294,3 +294,17 @@ function atualizarContadores() {
     contador.textContent = texto;
   });
 }
+document.getElementById("abrirLegal").addEventListener("click", () => {
+  document.getElementById("modalLegal").style.display = "block";
+});
+
+document.querySelector(".fechar-modal").addEventListener("click", () => {
+  document.getElementById("modalLegal").style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+  const modal = document.getElementById("modalLegal");
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
