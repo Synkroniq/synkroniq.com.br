@@ -678,7 +678,7 @@ footer {
 .filtro-categorias span[data-categoria="Oferta Relâmpago"] {
   background-color: #ff4d4d;
   font-weight: bold;
-
+}
 
 .filtro-categorias span:hover,
 .filtro-categorias .ativo {
