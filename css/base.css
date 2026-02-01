@@ -1,0 +1,38 @@
+/* 🔄 Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🌐 Fonte e cores globais */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  background-color: var(--cor-fundo-claro); /* antes: #fafafa */
+  color: var(--cor-texto-escuro);           /* antes: #333 */
+}
+
+/* Links */
+a {
+  color: var(--cor-secundaria); /* antes: #007BFF */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--cor-primaria);   /* destaque ao passar o mouse */
+}
+
+/* Títulos */
+h1, h2, h3 {
+  font-weight: bold;
+  line-height: 1.3;
+  color: var(--cor-texto-escuro);
+}
+
+/* Botões padrão */
+button {
+  font-family: inherit;
+  cursor: pointer;
+}

@@ -1,162 +1,170 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3PV6D7GM6H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-3PV6D7GM6H');
-</script>
-   
   <meta charset="UTF-8">
-  <title>Synkroniq</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/carrosselPromocoes.css">
+  <title>Synkroniq v3 | Início</title>
+  <link rel="stylesheet" href="css/paleta.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/home.css"> <!-- CSS específico da página inicial -->
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
+  <!-- 🔝 Cabeçalho carregado via include -->
+  <div id="header"></div>
 
-<!-- Cabeçalho -->
-<header class="topo">
-  <h1>Synkroniq</h1>
-  <nav class="menu">
-    <ul>
-      <li class="submenu-toggle">
-        <button type="button" class="menu-btn">Serviços</button>
-        <ul class="submenu">
-          <li><a href="manutencaoIndividual.html">Pessoal</a></li>
-          <li><a href="consultoriaEmpresarial.html">Empresarial</a></li>
-        </ul>
-      </li>
-
-      <li><a href="produtos.html">Produtos</a></li>
-      <!-- <li><a href="pagamento.html">Pagamento</a></li> -->
-      <li><a href="sobre.html">Sobre a Synkroniq</a></li>
-
-      <li class="submenu-toggle">
-        <button type="button" class="menu-btn">Contato</button>
-        <ul class="submenu">
-          <li><a href="whatsapp.html">WhatsApp</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-</header>
-
-<!-- Apresentação -->
-<section class="apresentacao">
-  
-<h2>Pensou em Tecnologia, pensou em <strong>Synkroniq!</strong></h2>
-  <p>
-    “Tecnologia que transforma: serviços, produtos e soluções digitais para quem quer mais performance no dia a dia e crescimento nos negócios.”
-  </p>
-  <p><strong>Solicite Agora</strong></p>
-    
-  <div class="social-icons">
-<a href="https://www.instagram.com/synkroniq.tech" target="_blank" class="icone">
-    <i class="fab fa-instagram"></i> Siga nosso Perfil
-  </a>
-  <a href="https://wa.me/5544997648490" target="_blank" class="icone">
-    <i class="fab fa-whatsapp"></i> Adicione nosso WhatsApp
-  </a>
-  <a href="https://www.youtube.com/@SynkroniqTech" target="_blank" class="icone">
-    <i class="fab fa-youtube"></i> Inscreva-se no Canal
-  </a>
-  </div>
-</section>
-
-<!-- Seções principais -->
-  <section class="carrossel-promocoes">
-  <h2>Promoções Relâmpago</h2>
-  <div class="carrossel-container">
-    <button class="seta esquerda">&#60;</button>
-
-    <div class="carrossel">
-      <div class="produto" data-tempo="2025-12-31T04:19:08">
-        <img src="https://www.kabum.com.br/_next/image?url=https%3A%2F%2Fimages2.kabum.com.br%2Fprodutos%2Ffotos%2Fsync_mirakl%2F174762%2Fxlarge%2FPlaca-de-V-deo-Galax-NVIDIA-GeForce-RTX-3060-12GB-GDDR6-LHR-1-Click-OC-15GBps-Ray-Tracing-DLSS-36NOL7MD1VOC_1756833883.jpg&w=1920&q=75" alt="Produto 1">
-        <h3>Placa de Vídeo NVIDIA Galax GeForce RTX 3060</h3>
-        <p><strong>Desempenho avançado para jogos e Criação de conteudo Ray Tracing.</strong></p>
-        <p>R$ 1949,00</p>
-        <div class="timer"></div>
-        <a href="https://www.awin1.com/cread.php?awinmid=17729&awinaffid=2555563&clickref=oferta+relampago&ued=https%3A%2F%2Fwww.kabum.com.br%2Fproduto%2F174762%2Fplaca-de-video-galax-nvidia-geforce-rtx-3060-12gb-gddr6-lhr-1-click-oc-15gbps-ray-tracing-dlss-36nol7md1voc" class="btn-comprar" target="_blank" rel="noopener noreferrer" >Comprar</a>
-      </div>
-       
-
-  <!-- <div class="produto" data-tempo="2025-09-26T23:59:59">
-        <img src="img/produto2.jpg" alt="Produto 2">
-        <h3>Kit Upgrade Ryzen</h3>
-        <p>R$ 999,00</p>
-        <div class="timer"></div>
-        <a href="https://link-afiliado.com/produto2" class="btn-comprar">Comprar</a>
-      </div> --!>
-
-      <!-- Adicione mais produtos aqui -->
-
-      
-      </div>
-    <button class="seta direita">&#62;</button>
-  </div>
-</section>
-  
-<!-- Modal Instagram -->
-<div id="instagramModal" class="modal-overlay">
-  <div class="modal-box">
-    <h2>⚠️ Atenção!</h2>
-    <p>Você está acessando este site pelo Instagram. Para visualizar todos os recursos corretamente e garantir que os links funcionem como esperado, recomendamos abrir o site em um navegador externo.</p>
-    <p><strong>Como fazer isso:</strong></p>
-    <ol>
-      <li>Toque nos <strong>três pontinhos</strong> no canto superior direito da tela.</li>
-      <li>Selecione <strong>“Abrir no... (seu navegador padrao)”</strong>.</li>
-      <li>Pronto! Você estará no navegador externo com acesso completo ao site.</li>
-    </ol>
-    <div class="dot-container">
-  <div class="pulse-ring"></div>
-  <div class="dots">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-    <p>Se preferir continuar no Instagram, clique abaixo.</p>
-    <div class="modal-buttons">
-      <button id="continueInstagramBtn">Continuar no Instagram</button>
+  <!-- 🎯 Hero visual -->
+  <section class="hero">
+    <div class="hero-texto">
+      <h1 class="titulo-neon">Transforme seu setup Potencialize sua experiência com a <strong>Synkroniq</strong></h1>
+      <p>Nós entregamos para <strong>Você</strong> ou para seu <strong>Negócio</strong>, soluções e assistência em tecnologia que funcionam</p>
+      <p>Tudo com confiança e performance</p>
+      <p><strong>Você foca no que importa, A gente cuida do resto</strong></p>
     </div>
-  </div>
+  </section>
+
+  <!-- 🛠️ Serviços -->
+<section class="servicos">
+  <h2>Nossos Serviços</h2>
+  <div class="grid-servicos">
+
+    <!-- Card 1: PCs e Notebooks -->
+    <div class="card-servico anim-esquerda">
+      <img src="assets/img/servico-pc.png" alt="Manutenção de PC e Notebook">
+      <h3>Manutenção/Formatação Preventiva</h3>
+      <p>Não espere seu computador travar para agir. Limpeza, formatação e <strong>Upgrades</strong> para manter seu PC ou notebook rápido e seguro.</p>
+      <p><strong>Invista hoje na performance que você merece.</strong></p>
+    </div>
+
+    <!-- Card 2: Video Games -->
+    <div class="card-servico anim-direita">
+      <img src="assets/img/servico-console.png" alt="Serviços para Video Games">
+      <h3>Serviços para Video Games</h3>
+      <p>Desbloqueio, limpeza e jogos para <strong>PS3</strong>, <strong>PS4</strong> e outros Video Games.</p>
+      <p><strong>Transforme seu console em uma máquina de diversão sem barreiras.</strong></p>
+    </div>
+
+    <!-- Card 3: Desenvolvimento de Sites -->
+    <div class="card-servico anim-cima">
+      <img src="assets/img/servico-sites.png" alt="Desenvolvimento de Sites">
+      <h3>Sites Profissionais</h3>
+      <p>Criação de sites modernos e responsivos para destacar sua marca e vender mais.</p>
+      <p><strong>Seja encontrado, seja lembrado, seja escolhido.</strong></p>
+    </div>
+
+    <!-- Card 4: Produtos Tech -->
+    <div class="card-servico anim-baixo">
+      <img src="assets/img/servico-produtos.png" alt="Produtos de Tecnologia">
+      <h3>Produtos Indicados</h3>
+      <p>Tecnologia certa, no clique certo.</p>
+      <p>Seleção exclusiva de produtos de informática e games, com links de afiliado confiáveis e preços competitivos. Você compra com segurança e leva inovação para seu dia a dia.</p>
+      <p><strong>Clique, compre e evolua com Synkroniq.</strong></p>
+     </div>
+
+    <!-- Card 5: Montagem de Pc --> 
+<div class="card-servico anim-cima">
+  <img src="assets/img/montagem-setup.png" alt="Consultoria para Montagem de Setup">
+  <h3>Montagem de Setup</h3>
+  <p>Ajuda personalizada para criar setups gamers ou profissionais que maximizam sua performance.</p>
+  <p><strong>Escolha os periféricos certos, monte com eficiência e tenha um ambiente que trabalha por você.</strong></p>
 </div>
 
-<!-- Rodapé -->
-<footer>
-  <p>&copy; 2025 Synkroniq <sup>®</sup>. Todos os direitos reservados.</p>
-  <p>Endereço: Loteamento Sumaré, Maringá/PR</p>
-  <div class="footer-links">
-  <a href="#" data-id="politica-privacidade">Política de Privacidade</a> |
-  <a href="#" data-id="termos-uso">Termos de Uso</a> |
-  <a href="#" data-id="suporte">Suporte</a>
+    
+    <!-- Card 6: Assistência Digital --> 
+    <div class="card-servico anim-direita"> 
+      <img src="assets/img/assistencia-redes.png" alt="Assistência em Redes Sociais e Sites"> 
+      <h3>Assistência em Redes Sociais e Sites</h3> 
+      <p>Gestão profissional para pequenas empresas e negócios locais, aumentando sua presença digital.</p> 
+      <p><strong>Deixe sua marca brilhar no mundo online.</strong></p> 
+    </div>
+
+    <!-- Card 7: Redes Domésticas -->
+  <div class="card-servico anim-cima">
+  <img src="assets/img/instalacao-redes.png" alt="Instalação de Redes Domésticas e Wi-Fi">
+  <h3>Instalação de Redes Domésticas e Wi-Fi</h3>
+  <p>Configuração de roteadores, repetidores, rede e câmeras de segurança para casas e home offices.</p>
+  <p><strong>Tenha sinal forte, estável e protegido em todos os cômodos.</strong></p>
 </div>
-</footer>
 
-<!-- Seções ocultas do rodapé -->
-  
-<section id="politica-privacidade" class="info-oculta">
-  <h2>Política de Privacidade</h2>
-  <p>Coletamos dados mínimos para oferecer nossos serviços com segurança. Você pode solicitar exclusão a qualquer momento.</p>
+    
 </section>
 
-<section id="termos-uso" class="info-oculta">
-  <h2>Termos de Uso</h2>
-  <p>Ao usar este site, você concorda com nossas diretrizes e respeita nossos direitos autorais.</p>
-</section>
+<!-- Botão fora da seção -->
+<div class="cta-whatsapp">
+  <a href="https://wa.me/55997648490?text=Olá,%20vim%20pelo%20site%20da%20Synkroniq%20e%20quero%20saber%20mais%20sobre%20os%20serviços."
+     target="_blank"
+     class="btn-whatsapp">
+     <img src="assets/icons/ic-whatsapp.png" alt="WhatsApp" style="height: 18px; vertical-align: middle; margin-right: 6px;">
+    Falar no WhatsApp
+  </a>
+</div>
 
-<section id="suporte" class="info-oculta">
-  <h2>Suporte</h2>
-  <p>Fale conosco via WhatsApp.</p>
-</section>
 
-  <script src="js/script.js"></script>
-  <script src="js/carrosselPromocoes.js"></script>
+  <!-- ⚡ Upgrades
+  <section class="upgrades">
+    <h2>Upgrades</h2>
+    <div class="grid-upgrades">
+      <div class="card-upgrade anim-cima">
+        <img src="assets/img/upgrade1.jpg" alt="Upgrade 1">
+        <h3>Performance</h3>
+        <p>Sites mais rápidos e otimizados.</p>
+      </div>
+      <div class="card-upgrade anim-cima">
+        <img src="assets/img/upgrade2.jpg" alt="Upgrade 2">
+        <h3>Design Moderno</h3>
+        <p>Layouts que encantam e convertem.</p>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- 📚 Curiosidades / Blog -->
+  <section class="curiosidades">
+    <h2>Curiosidades & Dicas</h2>
+    <div class="grid-curiosidades">
+      <article class="card-curiosidade anim-esquerda">
+        <h3>5 dicas para proteger seus dados</h3>
+        <p class="resumo">Descubra práticas simples que aumentam sua segurança online...</p>
+        <button class="expandir">Leia mais</button>
+        <div class="conteudo-expandido">
+          <p>Use senhas fortes, autenticação em dois fatores, mantenha software atualizado...</p>
+        </div>
+      </article>
+      <article class="card-curiosidade anim-direita">
+        <h3>Curiosidade sobre IA</h3>
+        <p class="resumo">Você sabia que a inteligência artificial já está em seu dia a dia?</p>
+        <button class="expandir">Leia mais</button>
+        <div class="conteudo-expandido">
+          <p>Assistentes virtuais, recomendações de filmes e até diagnósticos médicos usam IA.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 🔚 Rodapé -->
+<div id="footer"></div>
+
+  <!-- 📜 Scripts -->
+  <script src="js/include-header.js"></script>
+  <script src="js/include-footer.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/animacoes.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

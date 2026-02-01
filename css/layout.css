@@ -1,0 +1,230 @@
+/* Logo Synkroniq.tech */
+.logo-azul {
+  background: linear-gradient(
+    90deg,
+    #4facfe,   /* azul claro */
+    #00f2fe,   /* azul aqua vibrante */
+    #c0c0c0,   /* prata */
+    #1e90ff,   /* azul padrão */
+    #dcdcdc,   /* prata mais claro */
+    #87cefa    /* azul céu bem claro */
+  );
+  background-size: 300% 300%; /* aumenta área para animação */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  animation: brilho-metal 6s linear infinite;
+  text-shadow: 0 0 10px rgba(79,172,254,0.6); /* brilho suave */
+}
+
+@keyframes brilho-metal {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.logo-verde {
+  color: var(--cor-primaria); /* verde neon já definido */
+  text-shadow:
+    0 0 5px var(--cor-primaria),
+    0 0 10px #00ff99,
+    0 0 20px #00ffcc;
+  font-weight: bold;
+}
+
+
+/* 🔝 Cabeçalho */
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+    background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.85),  /* preto 85% */
+    rgba(0, 0, 0, 0.65)   /* preto 65% */
+  );
+ /* background-color: rgba(0, 0, 0, 0.85); /* preto com 85% de opacidade */ /*var(--cor-fundo-card); */ /* antes: #222 */
+  color: var(--cor-texto-claro);           /* antes: white */
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: var(--cor-primaria); /* antes: #00FF99 */
+}
+
+/* ☰ Botão menu */
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--cor-primaria); /* antes: #00FF99 */
+  cursor: pointer;
+  z-index: 1100; /* acima do overlay */
+}
+
+/* 📂 Menu lateral */
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: -250px; /* escondido inicialmente */
+  width: 250px;
+  height: 100%;
+  background-color: var(--cor-fundo-card); /* antes: #222 */
+  color: var(--cor-texto-claro);           /* antes: white */
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  transition: left 0.3s ease;
+  z-index: 1200; /* acima do overlay */
+}
+
+.menu-lateral a {
+  color: var(--cor-primaria); /* antes: #00FF99 */
+  text-decoration: none;
+  margin: 0.8rem 0;
+}
+
+.menu-lateral a:hover {
+  color: var(--cor-texto-claro); /* antes: #fff */
+}
+
+.menu-lateral.ativo {
+  left: 0; /* aparece deslizando */
+}
+
+/* 🌑 Overlay (fundo escuro quando menu abre) */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.menu-overlay.ativo {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 🔚 Rodapé */
+.rodape {
+  /* background-color: var(--cor-rodape-bg);     /* antes: #222 */
+    background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85),  /* preto 85% */
+    rgba(0, 0, 0, 0.65)   /* preto 65% */
+  );
+  color: var(--cor-rodape-texto);             /* antes: white */
+  text-align: center;
+  padding: 2rem;
+}
+
+.rodape .social a {
+  margin: 0 0.5rem;
+  color: var(--cor-rodape-link);              /* antes: #00FF99 */
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+.rodape .social a:hover {
+  color: var(--cor-texto-claro);              /* antes: #fff */
+}
+
+/* Modal Legais */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-conteudo {
+  background: var(--cor-fundo-card);
+  color: var(--cor-texto-claro);
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+
+  /* 🔽 Ajustes para rolagem em todos os modais */
+  max-height: 70vh;       /* altura máxima: 70% da tela */
+  overflow-y: auto;       /* ativa barra de rolagem vertical */
+}
+  /* 🔽 Ajustes para rolagem em todos os modais */
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* 🎨 Scrollbar estilizado (Chrome, Edge, Safari) */
+.modal-conteudo::-webkit-scrollbar {
+  width: 10px;              /* largura da barra */
+}
+
+.modal-conteudo::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.3); /* trilho escuro semitransparente */
+  border-radius: 6px;
+}
+
+.modal-conteudo::-webkit-scrollbar-thumb {
+  background: var(--cor-primaria); /* cor principal (verde neon, por exemplo) */
+  border-radius: 6px;
+  border: 2px solid rgba(0,0,0,0.4); /* borda para dar contraste */
+}
+
+.modal-conteudo::-webkit-scrollbar-thumb:hover {
+  background: var(--cor-secundaria); /* muda para azul vibrante no hover */
+}
+
+/* 🎨 Scrollbar estilizado (Firefox) */
+.modal-conteudo {
+  scrollbar-width: thin;                  /* barra fina */
+  scrollbar-color: var(--cor-primaria) rgba(0,0,0,0.3); /* cor da barra + trilho */
+}
+
+
+.modal-conteudo h2 {
+  margin-top: 0;
+  color: var(--cor-primaria);
+}
+
+.modal-conteudo p {
+  line-height: 1.6;
+  color: var(--cor-texto-suave);
+}
+
+/* Botão fechar */
+.modal .fechar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background: #e63946; /* vermelho principal */
+  color: #fff;         /* texto branco */
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.modal .fechar:hover {
+  background: #b71c1c; /* vermelho mais escuro no hover */
+}
+

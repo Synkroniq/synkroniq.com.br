@@ -1,0 +1,134 @@
+/* ================================
+   Responsividade para Mobile
+   ================================ */
+
+@media (max-width: 768px) {
+
+  /* Cabeçalho */
+  .cabecalho {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .menu-toggle {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+  }
+
+  /* Menu lateral */
+  .menu-lateral {
+    width: 200px;
+    padding: 1.5rem 1rem;
+  }
+
+  .menu-lateral a {
+    font-size: 1rem;
+    margin: 0.6rem 0;
+    padding: 0.5rem;
+  }
+
+  /* Conteúdo principal */
+  main {
+    padding: 1rem;
+  }
+
+  h1, h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Grids (serviços, upgrades, curiosidades, produtos) */
+  .grid-servicos,
+  .grid-upgrades,
+  .grid-curiosidades,
+  .lista-produtos {
+    grid-template-columns: 1fr; /* uma coluna no mobile */
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+  }
+
+  /* Ajuste das imagens dos cards */
+  .card-servico img,
+  .card-upgrade img,
+  .card-curiosidade img,
+  .card-produto img {
+    height: auto;
+  }
+
+  /* Rodapé */
+  .rodape {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .rodape .social {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .rodape .social a img {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Botões e links */
+  button, a {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+
+  /* Fundo das páginas (evita zoom no mobile) */
+  body.index,
+  body.produtos,
+  body.sobre {
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+  }
+
+  /* Modal */
+  .modal {
+    width: 90%;
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+
+  /* Tabelas */
+  table {
+    width: 100%;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    display: block;
+  }
+
+  /* Cards ou seções */
+  .card, .secao {
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+}

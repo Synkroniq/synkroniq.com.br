@@ -1,0 +1,93 @@
+/* 📚 Seção Curiosidades */
+.curiosidades {
+  padding: 3rem 2rem;
+  background-color: var(--cor-fundo-claro); /* antes: #f9f9f9 */
+  text-align: center;
+}
+
+.curiosidades h2 {
+  color: var(--cor-destaque); /* antes: #FF6600 */
+  margin-bottom: 2rem;
+}
+
+/* 🖼️ Grid de curiosidades */
+.grid-curiosidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* 🎯 Card de curiosidade */
+.card-curiosidade {
+  background: var(--cor-fundo-card); /* antes: white */
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  text-align: left;
+  opacity: 0;
+  transition: all 0.6s ease;
+  color: var(--cor-texto-claro);
+}
+
+.card-curiosidade h3 {
+  color: var(--cor-destaque); /* antes: #FF6600 */
+  margin-bottom: 0.5rem;
+}
+
+.card-curiosidade .resumo {
+  color: var(--cor-texto-suave); /* antes: #555 */
+  margin-bottom: 1rem;
+}
+
+/* 📖 Conteúdo expandido */
+.card-curiosidade .conteudo-expandido {
+  display: none;
+  margin-top: 1rem;
+  color: var(--cor-texto-escuro); /* antes: #333 */
+  line-height: 1.5;
+}
+
+.card-curiosidade.expandido .conteudo-expandido {
+  display: block;
+}
+
+/* 🔘 Botão expandir */
+.expandir {
+  background-color: var(--cor-destaque); /* antes: #FF6600 */
+  color: var(--cor-botao-hover-texto);
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.expandir:hover {
+  background-color: #cc5200; /* pode ser ajustado para uma var secundária mais escura */
+}
+
+/* ✨ Animações */
+.anim-esquerda {
+  transform: translateX(-40px);
+}
+
+.anim-direita {
+  transform: translateX(40px);
+}
+
+.anim-cima {
+  transform: translateY(-40px);
+}
+
+.anim-baixo {
+  transform: translateY(40px);
+}
+
+.anim-esquerda.mostrar,
+.anim-direita.mostrar,
+.anim-cima.mostrar,
+.anim-baixo.mostrar {
+  opacity: 1;
+  transform: translate(0);
+}

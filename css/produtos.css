@@ -1,125 +1,133 @@
-.filtro-alfabeto-wrapper {
-  margin-bottom: 20px;
+/* 🌐 Fundo geral da página */
+body {
+  background: url("../assets/img/bg-produtos.png") center/cover no-repeat fixed;
+  color: var(--cor-texto-claro);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-#toggleAlfabeto {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 14px;
-  border: none;
+/* 🛍️ Seção de filtros */
+.filtros {
+  padding: 2rem;
+  text-align: center;
+  background: none;
+}
+
+.filtros h2 {
+  margin-bottom: 1rem;
+  color: var(--cor-primaria);
+  text-shadow: 1px 1px 4px #000;
+}
+
+/* 🔎 Campo de busca */
+.busca {
+  margin-bottom: 1rem;
+}
+
+.busca input {
+  width: 60%;
+  max-width: 400px;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--cor-texto-suave);
+  font-size: 1rem;
+  background-color: var(--cor-fundo-card);
+  color: var(--cor-texto-claro);
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.busca input:focus {
+  outline: none;
+  border: 1px solid var(--cor-primaria);
+  box-shadow: 0 0 6px var(--cor-primaria);
+}
+
+/* 🎯 Select de categorias */
+.filtros select {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--cor-texto-suave);
+  font-size: 1rem;
   cursor: pointer;
-  font-weight: bold;
+  background-color: var(--cor-fundo-card);
+  color: var(--cor-texto-claro);
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filtros select:focus {
+  outline: none;
+  border: 1px solid var(--cor-primaria);
+  box-shadow: 0 0 6px var(--cor-primaria);
+}
+
+/* 📦 Lista de produtos */
+.lista-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 3rem 2rem;
+}
+
+/* 🖼️ Card de produto */
+.card-produto {
+  background: var(--cor-fundo-card);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--cor-texto-claro);
+}
+
+.card-produto:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.card-produto img {
   width: 100%;
-  text-align: left;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
 }
 
-.filtro-alfabeto {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
+.card-produto h3 {
+  color: var(--cor-secundaria);
+  margin-bottom: 0.5rem;
 }
 
-.filtro-alfabeto.ativo {
-  max-height: 300px; /* altura suficiente para mostrar as letras */
+.card-produto p {
+  color: var(--cor-texto-suave);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
 }
 
-.letras-lista {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 10px;
-  background-color: #f5f5f5;
-  max-height: 240px;
-  overflow-y: auto;
-}
-
-.letras-lista span {
-  padding: 6px 10px;
-  background-color: #ddd;
-  border-radius: 4px;
-  cursor: pointer;
+/* 🎯 Botão de compra */
+.btn-comprar {
+  display: inline-block;
+  background-color: var(--cor-primaria);
+  color: var(--cor-botao-texto);
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
   font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.letras-lista span.ativo {
-  background-color: #333;
-  color: #fff;
+.btn-comprar:hover {
+  background-color: var(--cor-botao-hover-bg);
+  color: var(--cor-botao-hover-texto);
+  transform: scale(1.05);
 }
 
-/* 📱 Responsivo para celular */
-@media (max-width: 600px) {
-  .letras-lista {
-    flex-direction: column;
-    max-height: 200px;
+/* 📱 Responsividade */
+@media (max-width: 768px) {
+  .busca input {
+    width: 90%;
   }
 
-  #toggleAlfabeto {
-    font-size: 16px;
+  .lista-produtos {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
   }
-}
-
-/* */
-.botoes-produtos {
-  display: flex;
-  justify-content: flex-start;
-  gap: 10px;
-  margin-bottom: 10px;
-  flex-wrap: wrap;
-}
-
-.botoes-produtos button {
-  padding: 8px 12px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  background-color: #333;
-  color: #fff;
-  border-radius: 4px;
-}
-
-/* 📱 Responsivo para celular */
-@media (max-width: 600px) {
-  .botoes-produtos {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .botoes-produtos button {
-    width: 100%;
-    font-size: 16px;
-  }
-}
-
-.paginacao {
-  text-align: center;
-  margin-top: 20px;
-}
-
-/* paginação */
-.paginacao button {
-  margin: 5px;
-  padding: 8px 12px;
-  background-color: #004080;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.paginacao button.ativo {
-  background-color: #0074d9;
-  font-weight: bold;
-}
-.botao.esgotado {
-  background-color: #999;
-  pointer-events: none;
-  cursor: not-allowed;
-}
-
-.contador {
-  margin-top: 8px;
-  font-weight: bold;
-  color: #d60000;
-  font-size: 0.9em;
-  text-align: center;
 }

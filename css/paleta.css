@@ -1,0 +1,35 @@
+/* 🎨 Paleta Oficial Synkroniq v3
+   --------------------------------------------------
+   Este arquivo centraliza todas as cores do projeto.
+   Basta alterar aqui para atualizar o visual em
+   todas as páginas e estilos.
+   -------------------------------------------------- */
+
+/* 🌑 Fundos */
+:root {
+  --cor-fundo-escuro: #111;     /* fundo principal escuro (seções hero, serviços, curiosidades) */
+  --cor-fundo-card: #222;       /* fundo dos cards (serviços, upgrades, curiosidades) */
+  --cor-fundo-claro: #f9f9f9;   /* fundo alternativo claro (seções leves, respiro visual) */
+
+  /* ✨ Texto */
+  --cor-texto-claro: #eee;      /* texto padrão em fundos escuros */
+  --cor-texto-escuro: #333;     /* texto padrão em fundos claros */
+  --cor-texto-suave: #ccc;      /* texto secundário, descrições e detalhes */
+
+  /* 🌈 Cores de destaque */
+  --cor-primaria: #00FF99;      /* verde neon (marca principal, botões, títulos em serviços) */
+  --cor-secundaria: #00BFFF;    /* azul vibrante (serviços, subtítulos) */
+  --cor-terciaria: #FFD700;     /* dourado (upgrades, títulos de destaque) */
+  --cor-destaque: #FF6600;      /* laranja (curiosidades/blog, chamadas de atenção) */
+
+  /* 🔘 Botões */
+  --cor-botao-bg: var(--cor-primaria);       /* fundo padrão dos botões */
+  --cor-botao-texto: #111;                   /* texto escuro para contraste */
+  --cor-botao-hover-bg: #00cc77;             /* fundo ao passar o mouse */
+  --cor-botao-hover-texto: #fff;             /* texto claro no hover */
+
+  /* 🖤 Rodapé */
+  --cor-rodape-bg: #222;                     /* fundo escuro do rodapé */
+  --cor-rodape-texto: #fff;                  /* texto branco no rodapé */
+  --cor-rodape-link: var(--cor-primaria);    /* links sociais em verde neon */
+}

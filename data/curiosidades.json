@@ -1,0 +1,20 @@
+[
+  {
+    "titulo": "5 dicas para proteger seus dados",
+    "resumo": "Descubra práticas simples que aumentam sua segurança online...",
+    "conteudo": "Use senhas fortes e únicas, habilite autenticação em dois fatores, mantenha seus softwares atualizados, evite redes Wi-Fi públicas sem VPN e faça backups regulares.",
+    "categoria": "seguranca"
+  },
+  {
+    "titulo": "Curiosidade sobre Inteligência Artificial",
+    "resumo": "Você sabia que a IA já está presente no seu dia a dia?",
+    "conteudo": "Assistentes virtuais, recomendações de filmes, diagnósticos médicos e até carros autônomos utilizam inteligência artificial para melhorar a experiência dos usuários.",
+    "categoria": "tecnologia"
+  },
+  {
+    "titulo": "Design minimalista em alta",
+    "resumo": "Menos é mais: o design minimalista conquista cada vez mais espaço.",
+    "conteudo": "Interfaces limpas, cores neutras e foco na usabilidade são tendências que tornam os projetos digitais mais agradáveis e eficientes.",
+    "categoria": "design"
+  }
+]

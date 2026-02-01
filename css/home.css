@@ -1,0 +1,252 @@
+/* 🌐 Fundo geral da página */
+body {
+  background: url("../assets/img/bg-index.png") center/cover no-repeat fixed;
+  color: var(--cor-texto-claro);
+}
+
+/* Titulo Logo */
+.titulo-neon {
+  color: #ffffff; /* branco puro */
+  text-shadow:
+    0 0 1px #ccc,
+    0 0 2px #00ccaa;
+}
+
+
+/* 🎯 Hero visual */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 6rem 2rem;
+  color: var(--cor-texto-claro);
+}
+
+.hero h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 6px #000; /* sombra para destacar */
+}
+
+.hero p {
+  font-size: 1.3rem;
+  color: var(--cor-texto-suave);
+  text-shadow: 1px 1px 4px #000;
+}
+
+/* 🛠️ Seção de serviços */
+.servicos {
+  padding: 3rem 2rem;
+  background: rgba(0,0,0,0.6); /* fundo escuro semitransparente */
+  text-align: center;
+  border-radius: 8px;
+}
+
+.servicos h2 {
+  color: var(--cor-primaria);
+  text-shadow: 1px 1px 4px #000;
+}
+
+.grid-servicos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card-servico {
+  background: var(--cor-fundo-card);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  padding: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+  color: var(--cor-texto-claro);
+}
+
+.card-servico img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.card-servico h3 {
+  color: var(--cor-secundaria);
+  margin-bottom: 0.5rem;
+}
+
+.card-servico p {
+  color: var(--cor-texto-suave);
+}
+
+/* ⚡ Upgrades */
+.upgrades {
+  padding: 3rem 2rem;
+  background: rgba(0,0,0,0.6); /* fundo escuro semitransparente */
+  text-align: center;
+  border-radius: 8px;
+}
+
+.upgrades h2 {
+  color: var(--cor-terciaria);
+  text-shadow: 1px 1px 4px #000;
+}
+
+.grid-upgrades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card-upgrade {
+  background: var(--cor-fundo-card);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.6s ease;
+  color: var(--cor-texto-claro);
+}
+
+.card-upgrade h3 {
+  color: var(--cor-primaria);
+  margin-bottom: 0.5rem;
+}
+
+/* 📚 Curiosidades */
+.curiosidades {
+  padding: 3rem 2rem;
+  background: rgba(0,0,0,0.6); /* fundo escuro semitransparente */
+  text-align: center;
+  border-radius: 8px;
+}
+
+.curiosidades h2 {
+  color: var(--cor-destaque);
+  text-shadow: 1px 1px 4px #000;
+}
+
+.grid-curiosidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card-curiosidade {
+  background: var(--cor-fundo-card);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  opacity: 0;
+  transition: all 0.6s ease;
+  color: var(--cor-texto-claro);
+}
+
+.card-curiosidade h3 {
+  color: var(--cor-destaque);
+  margin-bottom: 0.5rem;
+}
+
+.card-curiosidade .conteudo-expandido {
+  display: none;
+  margin-top: 1rem;
+  color: var(--cor-texto-suave);
+}
+
+.card-curiosidade.expandido .conteudo-expandido {
+  display: block;
+}
+
+/* 🔘 Botões */
+button.expandir {
+  background: var(--cor-botao-bg);
+  color: var(--cor-botao-texto);
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+button.expandir:hover {
+  background: var(--cor-botao-hover-bg);
+  color: var(--cor-botao-hover-texto);
+}
+
+/* ✨ Animações de entrada */
+.anim-esquerda.mostrar {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.anim-esquerda {
+  transform: translateX(-40px);
+}
+
+.anim-direita.mostrar {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.anim-direita {
+  transform: translateX(40px);
+}
+
+.anim-cima.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.anim-cima {
+  transform: translateY(-40px);
+}
+
+.anim-baixo.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.anim-baixo {
+  transform: translateY(40px);
+}
+
+
+/* Botão Whatsapp */
+@keyframes pulso-discreto {
+  0% { transform: scale(1); box-shadow: 0 0 0 rgba(0,0,0,0); }
+  50% { transform: scale(1.03); box-shadow: 0 0 12px rgba(37, 211, 102, 0.4); }
+  100% { transform: scale(1); box-shadow: 0 0 0 rgba(0,0,0,0); }
+}
+
+.cta-whatsapp {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.btn-whatsapp {
+  display: inline-flex; /* ícone + texto lado a lado */
+  align-items: center;
+  gap: 8px;
+  padding: 0.6rem 1rem;
+  background: #25D366;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: bold;
+  border-radius: 50px; /* pill */
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, background 0.3s ease;
+  animation: pulso-discreto 2.5s infinite;
+}
+
+.btn-whatsapp:hover {
+  background: #1ebe5d;
+  transform: scale(1.05);
+  animation: none; /* pausa o pulso ao interagir */
+}
