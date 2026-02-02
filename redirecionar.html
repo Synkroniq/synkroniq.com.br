@@ -66,19 +66,16 @@
 
     const ua = navigator.userAgent.toLowerCase();
 
-    // Detecta se é WebView do Instagram (não navegador completo)
+    // Detecta se é WebView do Instagram
     const isInstagramWebView = ua.includes("instagram") || ua.includes("wv");
 
     if (isInstagramWebView) {
-      // Mostra aviso apenas dentro do app Instagram
+      // 👉 Mostra aviso e NÃO redireciona
       document.getElementById("avisoInstagram").style.display = "block";
     } else if (destino) {
-      // Redireciona direto sem mostrar aviso
+      // 👉 Redireciona direto e ativa fallback
       window.location.replace(destino);
-    }
 
-    // 🔄 Fallback com contador visual + botão manual
-    if (destino) {
       let segundos = 5;
       const contadorEl = document.getElementById("contador");
       const contadorMsg = document.getElementById("contadorMsg");
