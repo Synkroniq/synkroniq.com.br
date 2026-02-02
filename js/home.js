@@ -1,4 +1,3 @@
-<script>
 fetch("data/depoimentos.json")
   .then(res => res.json())
   .then(depoimentos => {
@@ -40,4 +39,3 @@ fetch("data/depoimentos.json")
       showCard(index);
     }, 5000);
   });
-</script>
