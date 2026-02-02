@@ -26,6 +26,39 @@ body {
   text-shadow: 1px 1px 3px #000; /* melhora contraste sobre fundo */
 }
 
+.pilares {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 204, 170, 0.2);
+  backdrop-filter: blur(6px);
+  margin-top: 1rem;
+}
+
+.pilares ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pilares li {
+  margin-bottom: 1.2rem;
+  padding-left: 1.2rem;
+  position: relative;
+  color: var(--cor-texto-claro);
+  font-weight: 500;
+  text-shadow: 1px 1px 4px #000;
+}
+
+.pilares li::before {
+  content: "🔐";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.1rem;
+  color: var(--cor-primaria);
+}
+
 /* Container do formulário */
 .depoimentos-form {
   max-width: 700px;
@@ -117,3 +150,4 @@ body {
     width: 100%;
   }
 }
+
