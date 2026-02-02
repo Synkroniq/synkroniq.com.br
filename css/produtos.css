@@ -41,22 +41,42 @@ body {
   box-shadow: 0 0 6px var(--cor-primaria);
 }
 
-/* 🎯 Select de categorias */
-.filtros select {
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  border: 1px solid var(--cor-texto-suave);
-  font-size: 1rem;
-  cursor: pointer;
-  background-color: var(--cor-fundo-card);
-  color: var(--cor-texto-claro);
-  transition: border 0.3s ease, box-shadow 0.3s ease;
+/* 🎯 Filtro de categorias com rolagem */
+.filtro-categorias {
+  max-height: 300px;       /* altura máxima visível */
+  overflow-y: auto;        /* ativa rolagem vertical */
+  padding: 1rem;
+  background: rgba(20,20,30,0.85);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 204, 170, 0.4);
+  margin: 1rem auto;
+  max-width: 400px;
+  text-align: left;
 }
 
-.filtros select:focus {
-  outline: none;
-  border: 1px solid var(--cor-primaria);
-  box-shadow: 0 0 6px var(--cor-primaria);
+/* Estilo da barra de rolagem (Chrome, Edge, Safari) */
+.filtro-categorias::-webkit-scrollbar {
+  width: 8px;
+}
+
+.filtro-categorias::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+}
+
+.filtro-categorias::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00ccaa, #007bff);
+  border-radius: 8px;
+}
+
+.filtro-categorias::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00e6c0, #3399ff);
+}
+
+/* Firefox */
+.filtro-categorias {
+  scrollbar-width: thin;
+  scrollbar-color: #00ccaa rgba(255,255,255,0.05);
 }
 
 /* 📦 Lista de produtos */
@@ -129,5 +149,9 @@ body {
   .lista-produtos {
     grid-template-columns: 1fr;
     padding: 2rem 1rem;
+  }
+
+  .filtro-categorias {
+    max-width: 100%;
   }
 }
