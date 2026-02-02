@@ -131,23 +131,32 @@
   </a>
 </div>
 
+<!-- Depoimentos e Avaliação -->
+<section class="depoimentos" id="listaDepoimentos">
+  <h2>O que nossos clientes dizem</h2>
+</section>
 
-  <!-- ⚡ Upgrades
-  <section class="upgrades">
-    <h2>Upgrades</h2>
-    <div class="grid-upgrades">
-      <div class="card-upgrade anim-cima">
-        <img src="assets/img/upgrade1.jpg" alt="Upgrade 1">
-        <h3>Performance</h3>
-        <p>Sites mais rápidos e otimizados.</p>
-      </div>
-      <div class="card-upgrade anim-cima">
-        <img src="assets/img/upgrade2.jpg" alt="Upgrade 2">
-        <h3>Design Moderno</h3>
-        <p>Layouts que encantam e convertem.</p>
-      </div>
-    </div>
-  </section> -->
+<script>
+fetch("data/depoimentos.json")
+  .then(res => res.json())
+  .then(depoimentos => {
+    const container = document.getElementById("listaDepoimentos");
+    depoimentos
+      .filter(d => d.aprovado)
+      .forEach(d => {
+        const card = document.createElement("div");
+        card.className = "card-depoimento";
+        card.innerHTML = `
+          ${d.foto ? `<img src="${d.foto}" alt="${d.nome}">` : ""}
+          <h3>${d.nome}</h3>
+          <p>${"⭐".repeat(d.estrelas)}</p>
+          <p>${d.avaliacao}</p>
+        `;
+        container.appendChild(card);
+      });
+  });
+</script>
+
 
   <!-- 📚 Curiosidades / Blog -->
   <section class="curiosidades">
