@@ -67,11 +67,7 @@
     const ua = navigator.userAgent.toLowerCase();
 
     // Detecta se é WebView do Instagram (não navegador completo)
-    const isInstagramWebView = ua.includes("instagram") &&
-                               !ua.includes("chrome") &&
-                               !ua.includes("safari") &&
-                               !ua.includes("firefox") &&
-                               !ua.includes("edge");
+    const isInstagramWebView = ua.includes("instagram") || ua.includes("wv");
 
     if (isInstagramWebView) {
       // Mostra aviso apenas dentro do app Instagram
