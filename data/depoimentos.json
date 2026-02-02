@@ -1,0 +1,16 @@
+[
+  {
+    "nome": "Maria",
+    "avaliacao": "Ótimo atendimento!",
+    "estrelas": 5,
+    "foto": "uploads/maria.jpg",
+    "aprovado": false
+  },
+  {
+    "nome": "João",
+    "avaliacao": "Entrega rápida.",
+    "estrelas": 4,
+    "foto": null,
+    "aprovado": false
+  }
+]
