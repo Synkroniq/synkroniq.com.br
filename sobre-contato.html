@@ -26,33 +26,39 @@
     </p>
   </section>
 
-  <!-- 📬 Seção Depoimento/Avaliação -->
-<form id="depoimento-form" action="https://formsubmit.co/eduachou@gmail.com" method="POST" enctype="multipart/form-data">
-  <label for="nome">Seu nome:</label>
-  <input type="text" id="nome" name="nome" required>
+<!-- 📬 Seção Depoimento/Avaliação -->
+<section class="depoimentos-form">
+  <h2>Deixe sua avaliação</h2>
+  <p>Seu depoimento é muito importante para nós!</p>
+  <form id="depoimento-form" action="https://formsubmit.co/eduachou@gmail.com" method="POST" enctype="multipart/form-data">
+    
+    <label for="nome">Seu nome:</label>
+    <input type="text" id="nome" name="nome" required>
 
-  <label for="avaliacao">Sua avaliação:</label>
-  <textarea id="avaliacao" name="avaliacao" rows="4" required></textarea>
+    <label for="avaliacao">Sua avaliação:</label>
+    <textarea id="avaliacao" name="avaliacao" rows="4" required></textarea>
 
-  <label for="estrelas">Nota:</label>
-  <select id="estrelas" name="estrelas" required>
-    <option value="5">⭐⭐⭐⭐⭐</option>
-    <option value="4">⭐⭐⭐⭐</option>
-    <option value="3">⭐⭐⭐</option>
-    <option value="2">⭐⭐</option>
-    <option value="1">⭐</option>
-  </select>
+    <label for="estrelas">Nota:</label>
+    <select id="estrelas" name="estrelas" required>
+      <option value="5">⭐⭐⭐⭐⭐</option>
+      <option value="4">⭐⭐⭐⭐</option>
+      <option value="3">⭐⭐⭐</option>
+      <option value="2">⭐⭐</option>
+      <option value="1">⭐</option>
+    </select>
 
-  <label for="foto">Foto (opcional):</label>
-  <input type="file" id="foto" name="foto" accept="image/*">
+    <label for="foto">Foto (opcional):</label>
+    <input type="file" id="foto" name="foto" accept="image/*">
 
-  <!-- Configurações extras -->
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="https://www.synkroniq.com.br/obrigado.html">
-  <input type="text" name="_honey" style="display:none">
+    <!-- Configurações extras -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://www.synkroniq.com.br/obrigado.html">
+    <input type="text" name="_honey" style="display:none">
 
-  <button type="submit">Enviar avaliação</button>
-</form>
+    <button type="submit">Enviar avaliação</button>
+  </form>
+</section>
+
 
 
 
@@ -65,6 +71,7 @@
   <script src="js/menu.js"></script>
 </body>
 </html>
+
 
 
 
