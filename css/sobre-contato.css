@@ -26,39 +26,38 @@ body {
   text-shadow: 1px 1px 3px #000; /* melhora contraste sobre fundo */
 }
 
-/* 🎨 Estilo para o formulário de depoimentos */
+/* Container do formulário */
 .depoimentos-form {
-  max-width: 600px;
+  max-width: 800px; /* aumenta um pouco para caber duas colunas */
   margin: 2rem auto;
   padding: 2rem;
-  background: #f9f9f9;
+  background: var(--cor-fundo-card);
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  color: var(--cor-texto-claro);
 }
 
-.depoimentos-form h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
+/* Título e descrição */
+.depoimentos-form h2,
 .depoimentos-form p {
   text-align: center;
-  margin-bottom: 1.5rem;
-  color: #555;
+  margin-bottom: 1rem;
 }
 
+/* Layout em duas colunas */
 #depoimento-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* duas colunas iguais */
+  gap: 1.5rem;
 }
 
-#depoimento-form label {
-  font-weight: bold;
-  color: #444;
+/* Campos que ocupam toda a largura */
+#depoimento-form textarea,
+#depoimento-form button {
+  grid-column: span 2; /* ocupa as duas colunas */
 }
 
+/* Inputs e selects */
 #depoimento-form input[type="text"],
 #depoimento-form textarea,
 #depoimento-form select,
@@ -68,37 +67,41 @@ body {
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
-  transition: border-color 0.3s;
+  background: #fff;
+  color: #333;
 }
 
-#depoimento-form input:focus,
-#depoimento-form textarea:focus,
-#depoimento-form select:focus {
-  border-color: #007bff;
-  outline: none;
+/* Labels */
+#depoimento-form label {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  display: block;
 }
 
+/* Botão */
 #depoimento-form button {
   padding: 0.8rem 1.2rem;
-  background: #007bff;
+  background: var(--cor-primaria);
   color: #fff;
   font-weight: bold;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s;
+  text-align: center;
 }
 
 #depoimento-form button:hover {
-  background: #0056b3;
+  background: var(--cor-secundaria);
 }
 
-/* Responsivo */
-@media (max-width: 480px) {
-  .depoimentos-form {
-    padding: 1rem;
+/* Responsivo: volta para uma coluna */
+@media (max-width: 600px) {
+  #depoimento-form {
+    grid-template-columns: 1fr;
   }
+  #depoimento-form textarea,
   #depoimento-form button {
-    width: 100%;
+    grid-column: span 1;
   }
 }
