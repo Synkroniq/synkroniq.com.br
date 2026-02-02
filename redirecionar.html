@@ -2,14 +2,13 @@
 <html lang="pt-BR">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3PV6D7GM6H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-3PV6D7GM6H');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3PV6D7GM6H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3PV6D7GM6H');
+  </script>
   
   <meta charset="UTF-8">
   <title>Redirecionando...</title>
@@ -27,27 +26,80 @@
       border-radius: 8px;
       margin-bottom: 1rem;
     }
+    .contador {
+      font-size: 16px;
+      color: #333;
+      margin-top: 1rem;
+    }
+    .btn-ir {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: #007bff;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn-ir:hover {
+      background: #0056b3;
+    }
   </style>
-
 </head>
 <body>
   <div class="aviso" id="avisoInstagram" style="display:none;">
-    ⚠️ Você está usando o Instagram. Para garantir que o link funcione corretamente, <strong>abra esta página no navegador padrão</strong>.
+    ⚠️ Você está usando o Instagram. Para garantir que o link funcione corretamente, 
+    <strong>abra esta página no navegador padrão</strong>.
+    <p>Toque nos <strong>três pontinhos</strong> no canto superior direito da tela.</p>
+    <p>Selecione <strong>“Abrir no... (seu navegador padrão)”</strong>.</p>
+    <p>Pronto! Você estará no navegador externo com acesso completo ao <strong>Link</strong>.</p>
   </div>
-  <p>Toque nos <strong>três pontinhos</strong> no canto superior direito da tela.</p>
-  <p>Selecione <strong>“Abrir no... (seu navegador padrao)”</strong>.</p>
-  <p>Pronto! Você estará no navegador externo com acesso completo ao <strong>Link</strong></p>
+
+  <p id="contadorMsg" class="contador" style="display:none;">
+    Redirecionando em <span id="contador">5</span> segundos...
+  </p>
+  <a id="btnIrAgora" href="#" class="btn-ir" style="display:none;">Ir agora</a>
+
   <script>
     const params = new URLSearchParams(window.location.search);
     const destino = params.get("url");
 
     const ua = navigator.userAgent.toLowerCase();
-    const isInstagram = ua.includes("instagram");
 
-    if (isInstagram) {
+    // Detecta se é WebView do Instagram (não navegador completo)
+    const isInstagramWebView = ua.includes("instagram") &&
+                               !ua.includes("chrome") &&
+                               !ua.includes("safari") &&
+                               !ua.includes("firefox") &&
+                               !ua.includes("edge");
+
+    if (isInstagramWebView) {
+      // Mostra aviso apenas dentro do app Instagram
       document.getElementById("avisoInstagram").style.display = "block";
     } else if (destino) {
-      window.location.href = destino;
+      // Redireciona direto sem mostrar aviso
+      window.location.replace(destino);
+    }
+
+    // 🔄 Fallback com contador visual + botão manual
+    if (destino) {
+      let segundos = 5;
+      const contadorEl = document.getElementById("contador");
+      const contadorMsg = document.getElementById("contadorMsg");
+      const btnIrAgora = document.getElementById("btnIrAgora");
+
+      contadorMsg.style.display = "block";
+      btnIrAgora.style.display = "inline-block";
+      btnIrAgora.href = destino;
+
+      const intervalo = setInterval(() => {
+        segundos--;
+        contadorEl.textContent = segundos;
+        if (segundos <= 0) {
+          clearInterval(intervalo);
+          window.location.replace(destino);
+        }
+      }, 1000);
     }
   </script>
 </body>
