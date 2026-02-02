@@ -28,80 +28,92 @@ body {
 
 /* Container do formulário */
 .depoimentos-form {
-  max-width: 800px; /* aumenta um pouco para caber duas colunas */
-  margin: 2rem auto;
-  padding: 2rem;
-  background: var(--cor-fundo-card);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  color: var(--cor-texto-claro);
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: rgba(20, 20, 30, 0.85); /* fundo escuro translúcido */
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px); /* efeito vidro fosco */
+  border: 1px solid rgba(0, 204, 170, 0.4); /* borda neon suave */
 }
 
-/* Título e descrição */
-.depoimentos-form h2,
+/* Título e subtítulo */
+.depoimentos-form h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  color: var(--cor-secundaria);
+  text-shadow: 0 0 8px rgba(0, 204, 170, 0.6);
+}
+
 .depoimentos-form p {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  color: var(--cor-texto-suave);
 }
 
-/* Layout em duas colunas */
+/* Layout do formulário */
 #depoimento-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* duas colunas iguais */
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
-/* Campos que ocupam toda a largura */
-#depoimento-form textarea,
-#depoimento-form button {
-  grid-column: span 2; /* ocupa as duas colunas */
+/* Labels */
+#depoimento-form label {
+  font-weight: 600;
+  color: var(--cor-texto-claro);
+  margin-bottom: 0.3rem;
 }
 
-/* Inputs e selects */
+/* Inputs, textarea e select */
 #depoimento-form input[type="text"],
 #depoimento-form textarea,
 #depoimento-form select,
 #depoimento-form input[type="file"] {
   width: 100%;
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  padding: 0.9rem;
+  border: 1px solid rgba(0, 204, 170, 0.3);
+  border-radius: 10px;
   font-size: 1rem;
-  background: #fff;
-  color: #333;
+  background: rgba(255,255,255,0.05);
+  color: var(--cor-texto-claro);
+  transition: all 0.3s ease;
 }
 
-/* Labels */
-#depoimento-form label {
-  font-weight: bold;
-  margin-bottom: 0.3rem;
-  display: block;
+/* Efeito de foco com glow */
+#depoimento-form input:focus,
+#depoimento-form textarea:focus,
+#depoimento-form select:focus {
+  border-color: #00ccaa;
+  box-shadow: 0 0 12px rgba(0, 204, 170, 0.6);
+  outline: none;
 }
 
 /* Botão */
 #depoimento-form button {
-  padding: 0.8rem 1.2rem;
-  background: var(--cor-primaria);
+  padding: 1rem;
+  background: linear-gradient(135deg, #00ccaa, #007bff);
   color: #fff;
   font-weight: bold;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s;
-  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 #depoimento-form button:hover {
-  background: var(--cor-secundaria);
+  transform: translateY(-2px);
+  box-shadow: 0 0 16px rgba(0, 204, 170, 0.8);
 }
 
-/* Responsivo: volta para uma coluna */
+/* Responsivo */
 @media (max-width: 600px) {
-  #depoimento-form {
-    grid-template-columns: 1fr;
+  .depoimentos-form {
+    padding: 1.5rem;
   }
-  #depoimento-form textarea,
   #depoimento-form button {
-    grid-column: span 1;
+    width: 100%;
   }
 }
