@@ -58,8 +58,8 @@
   <!-- 🛠️ Serviços -->
 <section class="servicos">
   <h2>Nossos Serviços</h2>
+  
   <div class="grid-servicos">
-
     <!-- Card 1: PCs e Notebooks -->
     <div class="card-servico anim-esquerda">
       <img src="assets/img/servico-pc.png" alt="Manutenção de PC e Notebook">
@@ -117,7 +117,7 @@
   <p>Configuração de roteadores, repetidores, rede e câmeras de segurança para casas e home offices.</p>
   <p><strong>Tenha sinal forte, estável e protegido em todos os cômodos.</strong></p>
 </div>
-
+  </div>
     
 </section>
 
@@ -132,32 +132,13 @@
 </div>
 
 <!-- Depoimentos e Avaliação -->
-<section class="depoimentos" id="listaDepoimentos">
+<section class="depoimentos">
   <h2>O que nossos clientes dizem</h2>
+  <div class="carousel" id="carouselDepoimentos">
+    <!-- Os cards serão inseridos aqui via JS -->
+  </div>
 </section>
-
-<script>
-fetch("data/depoimentos.json")
-  .then(res => res.json())
-  .then(depoimentos => {
-    const container = document.getElementById("listaDepoimentos");
-    depoimentos
-      .filter(d => d.aprovado)
-      .forEach(d => {
-        const card = document.createElement("div");
-        card.className = "card-depoimento";
-        card.innerHTML = `
-          ${d.foto ? `<img src="${d.foto}" alt="${d.nome}">` : ""}
-          <h3>${d.nome}</h3>
-          <p>${"⭐".repeat(d.estrelas)}</p>
-          <p>${d.avaliacao}</p>
-        `;
-        container.appendChild(card);
-      });
-  });
-</script>
-
-
+  
   <!-- 📚 Curiosidades / Blog -->
   <section class="curiosidades">
     <h2>Curiosidades & Dicas</h2>
@@ -190,7 +171,9 @@ fetch("data/depoimentos.json")
   <script src="js/menu.js"></script>
   <script src="js/animacoes.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/home.js"></script>
 </body>
 </html>
+
 
 
