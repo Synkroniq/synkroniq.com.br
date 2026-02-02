@@ -26,57 +26,79 @@ body {
   text-shadow: 1px 1px 3px #000; /* melhora contraste sobre fundo */
 }
 
-/* 📬 Seção Contato */
-.contato {
-  padding: 3rem 2rem;
-  background: rgba(0,0,0,0.6); /* fundo escuro semitransparente */
-  text-align: center;
-  border-radius: 8px;
-}
-
-.contato h2 {
-  color: var(--cor-primaria);
-  margin-bottom: 1.5rem;
-  text-shadow: 1px 1px 4px #000;
-}
-
-.form-contato {
+/* 🎨 Estilo para o formulário de depoimentos */
+.depoimentos-form {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.depoimentos-form h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.depoimentos-form p {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+#depoimento-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.form-contato label {
-  text-align: left;
+#depoimento-form label {
   font-weight: bold;
-  color: var(--cor-texto-claro);
-  text-shadow: 1px 1px 3px #000;
+  color: #444;
 }
 
-.form-contato input,
-.form-contato textarea {
+#depoimento-form input[type="text"],
+#depoimento-form textarea,
+#depoimento-form select,
+#depoimento-form input[type="file"] {
+  width: 100%;
   padding: 0.8rem;
-  border-radius: 6px;
-  border: 1px solid var(--cor-texto-suave);
+  border: 1px solid #ccc;
+  border-radius: 8px;
   font-size: 1rem;
-  background-color: var(--cor-fundo-card); /* mantém contraste */
-  color: var(--cor-texto-claro);
+  transition: border-color 0.3s;
 }
 
-.form-contato button {
-  background-color: var(--cor-secundaria);
-  color: var(--cor-botao-hover-texto);
-  padding: 0.8rem;
+#depoimento-form input:focus,
+#depoimento-form textarea:focus,
+#depoimento-form select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+#depoimento-form button {
+  padding: 0.8rem 1.2rem;
+  background: #007bff;
+  color: #fff;
+  font-weight: bold;
   border: none;
-  border-radius: 6px;
-  font-size: 1rem;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s;
 }
 
-.form-contato button:hover {
-  background-color: #0056b3; /* versão mais escura da secundária */
+#depoimento-form button:hover {
+  background: #0056b3;
 }
 
+/* Responsivo */
+@media (max-width: 480px) {
+  .depoimentos-form {
+    padding: 1rem;
+  }
+  #depoimento-form button {
+    width: 100%;
+  }
+}
