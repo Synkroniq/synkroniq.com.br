@@ -26,22 +26,35 @@
     </p>
   </section>
 
-  <!-- 📬 Seção Contato -->
-  <section class="contato">
-    <h2>Entre em contato</h2>
-    <form class="form-contato">
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" required>
+  <!-- 📬 Seção Depoimento/Avaliação -->
+<form id="depoimento-form" action="https://formsubmit.co/eduachou@gmail.com" method="POST" enctype="multipart/form-data">
+  <label for="nome">Seu nome:</label>
+  <input type="text" id="nome" name="nome" required>
 
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" name="email" required>
+  <label for="avaliacao">Sua avaliação:</label>
+  <textarea id="avaliacao" name="avaliacao" rows="4" required></textarea>
 
-      <label for="mensagem">Mensagem:</label>
-      <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+  <label for="estrelas">Nota:</label>
+  <select id="estrelas" name="estrelas" required>
+    <option value="5">⭐⭐⭐⭐⭐</option>
+    <option value="4">⭐⭐⭐⭐</option>
+    <option value="3">⭐⭐⭐</option>
+    <option value="2">⭐⭐</option>
+    <option value="1">⭐</option>
+  </select>
 
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+  <label for="foto">Foto (opcional):</label>
+  <input type="file" id="foto" name="foto" accept="image/*">
+
+  <!-- Configurações extras -->
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://www.synkroniq.com.br/obrigado.html">
+  <input type="text" name="_honey" style="display:none">
+
+  <button type="submit">Enviar avaliação</button>
+</form>
+
+
 
   <!-- 🔚 Rodapé -->
 <div id="footer"></div>
@@ -52,6 +65,7 @@
   <script src="js/menu.js"></script>
 </body>
 </html>
+
 
 
 
