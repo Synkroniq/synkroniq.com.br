@@ -38,7 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
         <img src="${p.imagem}" alt="${p.titulo}">
         <h3>${p.titulo}</h3>
         <p>${p.descricao}</p>
-        <a href="${p.link}" target="_blank" class="btn-comprar">${p.botao}</a>
+        <a href="redirecionar.html?url=${encodeURIComponent(p.link)}" 
+   target="_blank" 
+   class="btn-comprar">${p.botao}</a>
       `;
       lista.appendChild(card);
     });
@@ -68,3 +70,4 @@ document.addEventListener("DOMContentLoaded", () => {
     renderProdutos(filtrados);
   }
 });
+
